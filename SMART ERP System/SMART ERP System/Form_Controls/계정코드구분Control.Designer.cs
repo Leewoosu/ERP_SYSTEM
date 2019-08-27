@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.계정과목BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.계정과목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.계정과목코드번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv계정과목List = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgv계정과목List = new System.Windows.Forms.DataGridView();
+            this.계정과목코드번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.계정과목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.계정과목BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv계정과목List)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv계정과목List)).BeginInit();
             this.SuspendLayout();
             // 
             // 계정과목BindingSource
@@ -69,21 +69,36 @@
             this.splitContainer.SplitterDistance = 43;
             this.splitContainer.TabIndex = 0;
             // 
-            // 계정과목명DataGridViewTextBoxColumn
+            // groupBox1
             // 
-            this.계정과목명DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.계정과목명DataGridViewTextBoxColumn.DataPropertyName = "계정과목명";
-            this.계정과목명DataGridViewTextBoxColumn.HeaderText = "계정과목명";
-            this.계정과목명DataGridViewTextBoxColumn.Name = "계정과목명DataGridViewTextBoxColumn";
-            this.계정과목명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txbSearch);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(316, 43);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
             // 
-            // 계정과목코드번호DataGridViewTextBoxColumn
+            // txbSearch
             // 
-            this.계정과목코드번호DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.계정과목코드번호DataGridViewTextBoxColumn.DataPropertyName = "계정과목코드번호";
-            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드";
-            this.계정과목코드번호DataGridViewTextBoxColumn.Name = "계정과목코드번호DataGridViewTextBoxColumn";
-            this.계정과목코드번호DataGridViewTextBoxColumn.ReadOnly = true;
+            this.txbSearch.Location = new System.Drawing.Point(74, 12);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(221, 22);
+            this.txbSearch.TabIndex = 1;
+            this.txbSearch.TextChanged += new System.EventHandler(this.TxbSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.Location = new System.Drawing.Point(15, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "검색";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgv계정과목List
             // 
@@ -108,36 +123,21 @@
             this.dgv계정과목List.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgv계정과목List_RowPostPaint);
             this.dgv계정과목List.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvList_KeyDown);
             // 
-            // label1
+            // 계정과목코드번호DataGridViewTextBoxColumn
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.Location = new System.Drawing.Point(15, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "검색";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.계정과목코드번호DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.계정과목코드번호DataGridViewTextBoxColumn.DataPropertyName = "계정과목코드번호";
+            this.계정과목코드번호DataGridViewTextBoxColumn.HeaderText = "계정과목코드";
+            this.계정과목코드번호DataGridViewTextBoxColumn.Name = "계정과목코드번호DataGridViewTextBoxColumn";
+            this.계정과목코드번호DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // txbSearch
+            // 계정과목명DataGridViewTextBoxColumn
             // 
-            this.txbSearch.Location = new System.Drawing.Point(74, 12);
-            this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(221, 22);
-            this.txbSearch.TabIndex = 1;
-            this.txbSearch.TextChanged += new System.EventHandler(this.TxbSearch_TextChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txbSearch);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(316, 43);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
+            this.계정과목명DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.계정과목명DataGridViewTextBoxColumn.DataPropertyName = "계정과목명";
+            this.계정과목명DataGridViewTextBoxColumn.HeaderText = "계정과목명";
+            this.계정과목명DataGridViewTextBoxColumn.Name = "계정과목명DataGridViewTextBoxColumn";
+            this.계정과목명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 계정코드구분Control
             // 
@@ -151,9 +151,9 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv계정과목List)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv계정과목List)).EndInit();
             this.ResumeLayout(false);
 
         }

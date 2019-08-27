@@ -24,10 +24,14 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void Btn사진등록_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.ShowDialog();
-            if (open.FileName.ToString() != string.Empty)
-                pbox사진등록.Load(open.FileName);
+            //OpenFileDialog open = new OpenFileDialog();
+            
+            using (OpenFileDialog open = new OpenFileDialog())
+            {
+                open.ShowDialog();
+                if (open.FileName.ToString() != string.Empty)
+                    pbox사진등록.Load(open.FileName);
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -67,7 +71,10 @@ namespace SMART_ERP_System.MenuUserControl
             사원상세정보.사원코드 = dataGridView1.CurrentRow.Cells[0].
                 Value.ToString();
 
+            if (File.Exists(di.ToString() + "\\" + 사원상세정보.사원코드.ToString()) == false)
+            { 
             File.Copy(pbox사진등록.ImageLocation.ToString(), di.ToString() + "\\" + 사원상세정보.사원코드.ToString(), true);
+            }
 
             사원상세정보.사원사진 = 사원상세정보.사원코드.ToString();
             사원상세정보.사원이름_영문_ = txb성명영문.Text;
@@ -133,8 +140,10 @@ namespace SMART_ERP_System.MenuUserControl
                 {
                     txb성명영문.Text = item.사원이름_영문_.ToString();
 
-                    if (item.사원사진 != string.Empty)
+                    if (item.사원사진 != string.Empty && File.Exists(di + "\\" + item.사원사진.ToString()) == true)
+                    {
                         pbox사진등록.Load(di + "\\" + item.사원사진.ToString());
+                    }
                     cbb내외국인구분.Text = item.내외국인구분.ToString();
                     txb주민등록번호.Text = item.주민등록번호.ToString();
                     cbb성별.Text = item.성별.ToString();
@@ -274,6 +283,7 @@ namespace SMART_ERP_System.MenuUserControl
         private void 인사정보등록_Load(object sender, EventArgs e)
         {
 
+            
             string sDirPath;
             sDirPath = Application.StartupPath + "\\사원사진";
             di = new DirectoryInfo(sDirPath);

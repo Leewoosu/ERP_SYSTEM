@@ -541,10 +541,10 @@
       <PropertyRef Name="사업장코드" />
     </Key>
     <Property Name="사업장코드" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="사업장명" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="사업장등록번호" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="사업장명" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="사업장등록번호" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="대표자명" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="사업장주소" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="사업장주소" Type="nvarchar" MaxLength="60" Nullable="false" />
     <Property Name="사업장번지" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="사업장전화번호" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="업태" Type="nvarchar" MaxLength="30" Nullable="false" />

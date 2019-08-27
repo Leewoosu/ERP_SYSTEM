@@ -39,7 +39,7 @@ namespace ClassLibrary
         public int 층 { get; set; }
         public int 리드타임 { get; set; }
         public int LOT수량 { get; set; }
-        public Nullable<bool> 검사여부 { get; set; }
+        public string 검사여부 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<공정순서> 공정순서 { get; set; }

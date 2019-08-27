@@ -130,9 +130,9 @@ namespace ClassLibrary.EntityData
 
                     if (string.IsNullOrEmpty(검사여부) == false)
                     {
-                        bool 여부 = true;
-                        if (검사여부 == "1. 예") 여부 = true;
-                        else 여부 = false;
+                        string 여부 = "true";
+                        if (검사여부 == "1. 예") 여부 = "true";
+                        else 여부 = "false";
                         var query1 = from x in query
                                      where x.검사여부 == 여부
                                      select x;
@@ -147,9 +147,9 @@ namespace ClassLibrary.EntityData
                 {
                     if (string.IsNullOrEmpty(검사여부) == false)
                     {
-                        bool 여부 = true;
-                        if (검사여부 == "1. 예") 여부 = true;
-                        else 여부 = false;
+                        string 여부 = "true";
+                        if (검사여부 == "1. 예") 여부 = "true";
+                        else 여부 = "false";
                         var query1 = from x in query4
                                      where x.검사여부 == 여부
                                      select x;
@@ -219,7 +219,7 @@ namespace ClassLibrary.EntityData
                 return query.Select(x => x.LOT수량).First().ToString();
             }
         }
-        public bool? Search검사여부(string 제품번호)
+        public string Search검사여부(string 제품번호)
         {
             using (ERPEntities context = new ERPEntities())
             {

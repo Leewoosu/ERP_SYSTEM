@@ -44,7 +44,6 @@ namespace MES
                              b.공정명
                          };
 
-                MessageBox.Show($"{rq.Count()}");
 
                 if (!tbx품목번호.Text.IsNullOrEmpty())
                 {
@@ -57,14 +56,20 @@ namespace MES
                 if (dtFirst != null && dtLast != null)
                 {
                     DateTime Startday = DateTime.Parse(dtFirst.Value.ToString("yyyy-MM-dd"));
-                    MessageBox.Show($"{Startday.ToString().Substring(0, 10)}");
                     DateTime Endday = DateTime.Parse(dtLast.Value.ToString("yyyy-MM-dd"));
-                    MessageBox.Show($"{Endday.ToString().Substring(0, 10)}");
 
                     rq = from b in rq
                          where Startday <= b.등록시간 &&
                          Endday >= b.등록시간
                          select b;
+                }
+
+
+                if (!((string)cbb공정.SelectedItem).IsNullOrEmpty())
+                {
+                    rq = from a in rq
+                        where ((string)cbb공정.SelectedItem).Contains(a.공정명)
+                        select a;
                 }
 
                 if (!tbx관리번호.Text.IsNullOrEmpty())
@@ -74,7 +79,6 @@ namespace MES
                          select a;
                 }
 
-                MessageBox.Show($"{rq.Count()}");
 
                 if (!tbx사원번호.Text.IsNullOrEmpty())
                 {
@@ -83,10 +87,13 @@ namespace MES
                                 where a.작업자 == x.사원명
                                 select x.사원코드).Contains(tbx사원번호.Text)
                          select a;
-
                 }
 
-                MessageBox.Show($"{rq.Count()}");
+                if (rq.Count() <= 0)
+                {
+                    MessageBox.Show("검색된 데이터가 없습니다");
+                    return;
+                }
 
                 int ColumnIndex = 0;
                 int 불량실적행번호 = 0;

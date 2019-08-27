@@ -32,12 +32,19 @@ namespace MES
 
         private void LoginForm_VisibleChanged(object sender, EventArgs e)
         {
-            if(this.Visible == false)
+
+            loginMember.EmployeeName = loginControl.txbEmployeeName.Text;
+            loginMember.EmployeeCode = loginControl.txbEmployeeCode.Text;
+
+
+            if (this.Visible == false)
             {
                 mainForm = new MainForm();
                 mainForm.RecieveLoginForm(this);
                 mainForm.SetFormLocation();
+                mainForm.lbl작업자.Text = loginMember.EmployeeName.ToString();
                 mainForm.Show();
+               
             }
         }
 

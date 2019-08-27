@@ -147,10 +147,11 @@
             // cbb사원코드
             // 
             this.cbb사원코드.DataSource = this.사원등록BindingSource;
+            this.cbb사원코드.Font = new System.Drawing.Font("굴림", 9F);
             this.cbb사원코드.FormattingEnabled = true;
             this.cbb사원코드.Location = new System.Drawing.Point(374, 21);
             this.cbb사원코드.Name = "cbb사원코드";
-            this.cbb사원코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb사원코드.Size = new System.Drawing.Size(65, 20);
             this.cbb사원코드.TabIndex = 85;
             this.cbb사원코드.SelectedValueChanged += new System.EventHandler(this.Cbb사원코드_SelectedValueChanged);
             // 
@@ -161,28 +162,31 @@
             // DeliveryLastDate
             // 
             this.DeliveryLastDate.CustomFormat = "yyyy-MM-dd";
+            this.DeliveryLastDate.Font = new System.Drawing.Font("굴림", 9F);
             this.DeliveryLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DeliveryLastDate.Location = new System.Drawing.Point(842, 70);
             this.DeliveryLastDate.Name = "DeliveryLastDate";
-            this.DeliveryLastDate.Size = new System.Drawing.Size(99, 20);
+            this.DeliveryLastDate.Size = new System.Drawing.Size(99, 21);
             this.DeliveryLastDate.TabIndex = 79;
             // 
             // DeliveryFirstDate
             // 
             this.DeliveryFirstDate.CustomFormat = "yyyy-MM-dd";
+            this.DeliveryFirstDate.Font = new System.Drawing.Font("굴림", 9F);
             this.DeliveryFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DeliveryFirstDate.Location = new System.Drawing.Point(711, 70);
             this.DeliveryFirstDate.Name = "DeliveryFirstDate";
-            this.DeliveryFirstDate.Size = new System.Drawing.Size(103, 20);
+            this.DeliveryFirstDate.Size = new System.Drawing.Size(103, 21);
             this.DeliveryFirstDate.TabIndex = 78;
             // 
             // cbb부서코드
             // 
             this.cbb부서코드.DataSource = this.부서등록BindingSource;
+            this.cbb부서코드.Font = new System.Drawing.Font("굴림", 9F);
             this.cbb부서코드.FormattingEnabled = true;
             this.cbb부서코드.Location = new System.Drawing.Point(85, 21);
             this.cbb부서코드.Name = "cbb부서코드";
-            this.cbb부서코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb부서코드.Size = new System.Drawing.Size(65, 20);
             this.cbb부서코드.TabIndex = 84;
             this.cbb부서코드.SelectedValueChanged += new System.EventHandler(this.Cbb부서코드_SelectedValueChanged);
             // 
@@ -202,9 +206,10 @@
             // 
             // txb사원명
             // 
+            this.txb사원명.Font = new System.Drawing.Font("굴림", 9F);
             this.txb사원명.Location = new System.Drawing.Point(445, 21);
             this.txb사원명.Name = "txb사원명";
-            this.txb사원명.Size = new System.Drawing.Size(108, 20);
+            this.txb사원명.Size = new System.Drawing.Size(108, 21);
             this.txb사원명.TabIndex = 83;
             // 
             // label7
@@ -219,33 +224,37 @@
             // OrderLastDate
             // 
             this.OrderLastDate.CustomFormat = "yyyy-MM-dd";
+            this.OrderLastDate.Font = new System.Drawing.Font("굴림", 9F);
             this.OrderLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.OrderLastDate.Location = new System.Drawing.Point(498, 69);
             this.OrderLastDate.Name = "OrderLastDate";
-            this.OrderLastDate.Size = new System.Drawing.Size(99, 20);
+            this.OrderLastDate.Size = new System.Drawing.Size(99, 21);
             this.OrderLastDate.TabIndex = 75;
             // 
             // txb부서명
             // 
+            this.txb부서명.Font = new System.Drawing.Font("굴림", 9F);
             this.txb부서명.Location = new System.Drawing.Point(156, 21);
             this.txb부서명.Name = "txb부서명";
-            this.txb부서명.Size = new System.Drawing.Size(108, 20);
+            this.txb부서명.Size = new System.Drawing.Size(108, 21);
             this.txb부서명.TabIndex = 82;
             // 
             // OrderFirstDate
             // 
             this.OrderFirstDate.CustomFormat = "yyyy-MM-dd";
+            this.OrderFirstDate.Font = new System.Drawing.Font("굴림", 9F);
             this.OrderFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.OrderFirstDate.Location = new System.Drawing.Point(374, 70);
             this.OrderFirstDate.Name = "OrderFirstDate";
-            this.OrderFirstDate.Size = new System.Drawing.Size(103, 20);
+            this.OrderFirstDate.Size = new System.Drawing.Size(103, 21);
             this.OrderFirstDate.TabIndex = 74;
             // 
             // txb거래처이름
             // 
+            this.txb거래처이름.Font = new System.Drawing.Font("굴림", 9F);
             this.txb거래처이름.Location = new System.Drawing.Point(85, 69);
             this.txb거래처이름.Name = "txb거래처이름";
-            this.txb거래처이름.Size = new System.Drawing.Size(179, 20);
+            this.txb거래처이름.Size = new System.Drawing.Size(179, 21);
             this.txb거래처이름.TabIndex = 73;
             // 
             // label11

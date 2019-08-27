@@ -17,6 +17,9 @@ namespace SMART_ERP_System.MenuUserControl
 {
     public partial class 전표등록 : UserControl
     {
+        int xPoint;
+        int yPoint;
+
         [DllImport("User32.dll")]
         public static extern void keybd_event(uint vk, uint scan, uint flags, uint extraInfo);
         private Label label;
@@ -30,7 +33,7 @@ namespace SMART_ERP_System.MenuUserControl
             SetData();
             SetLabelForCodeHelper();
 
-            
+
             txb일.Focus();
         }
 
@@ -192,6 +195,10 @@ namespace SMART_ERP_System.MenuUserControl
 
                     if (check == true)
                         dgv전표리스트.Rows.Add();
+
+                    if (dgv전표리스트.RowCount == 0)
+                        dgv전표리스트.Rows.Add();
+
                     dgv전표리스트.CurrentCell = dgv전표리스트.Rows[0].Cells[1];
                     dgv전표리스트.Focus();
                 }
@@ -208,7 +215,7 @@ namespace SMART_ERP_System.MenuUserControl
             if ((dgv전표.Rows[전표단위.RowIndex].Cells[2].Value != null))
             {
                 List<전표리스트> list = DB.전표리스트.SearchList(input.Date, dgv전표.Rows[전표단위.RowIndex].Cells[2].Value.ToString());
-                전표리스트단위.LoadCnt = list.Count - 1;
+                전표리스트단위.LoadCnt = list.Count-1;
 
                 if (list.Count > 0)
                 {
@@ -351,6 +358,7 @@ namespace SMART_ERP_System.MenuUserControl
             // Enter 입력시 다음 셀로 이동, 마지막 셀에서 데이터가 없으면 개행추가 금지
             if (e.KeyData == Keys.Enter)
             {
+
                 e.SuppressKeyPress = true;
 
                 전표리스트단위.ColumnIndex = dgv전표리스트.CurrentCell.ColumnIndex;
@@ -402,9 +410,13 @@ namespace SMART_ERP_System.MenuUserControl
                 // 불러온 데이터 수가 현재 Dgv전표리스트의 행보다 적으면 기존데이터에 해당
                 if (전표리스트단위.LoadCnt > 0)
                 {
-                    if (dgv전표.Rows[전표단위.Index].Cells[2].Value != null)
-                        number = dgv전표.Rows[전표단위.Index].Cells[2].Value.ToString();
                     DB.전표리스트.FillIn전표리스트List(input.Date, dgv전표리스트, 전표리스트s, number, 전표리스트단위.LoadCnt);
+
+                    if (dgv전표.Rows[전표단위.Index].Cells[2].Value != null)
+                    {
+                        number = dgv전표.Rows[전표단위.Index].Cells[2].Value.ToString();  
+                    }
+
                     var listForCheck2 = DB.전표리스트.GetAllMatchedNumber(number);
 
                     if (listForCheck2.Count == 전표리스트s.Count)
@@ -506,6 +518,8 @@ namespace SMART_ERP_System.MenuUserControl
 
                     dgv전표리스트.Rows[전표리스트단위.Index].Cells[2].Value = 전표리스트단위.AccountCode;
                     dgv전표리스트.Rows[전표리스트단위.Index].Cells[3].Value = 전표리스트단위.AccountName;
+
+                    dgv전표리스트.CurrentCell = dgv전표리스트.Rows[xPoint].Cells[4];
                 }
 
                 if (dgv전표리스트.CurrentCell.ColumnIndex == 4)
@@ -533,6 +547,8 @@ namespace SMART_ERP_System.MenuUserControl
                         dgv전표리스트.Rows[전표리스트단위.Index].Cells[5].Value = 전표리스트단위.GeneralCustomerName;
                         dgv전표리스트.Rows[전표리스트단위.Index].Cells[6].Value = 전표리스트단위.GeneralCorporateRegistrationNumber;
                     }
+
+                    //dgv전표리스트.CurrentCell = dgv전표리스트.Rows[xPoint].Cells["dataGridViewTextBoxColumn8"];
                 }
             }
 
@@ -655,32 +671,27 @@ namespace SMART_ERP_System.MenuUserControl
                     label.Hide();
                 }
 
-                SendKeys.Send("{UP}");
-                SendKeys.Send("{Right}");
+                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[xPoint].Cells["dataGridViewTextBoxColumn3"];
             }
 
             // 3번째 열 입력 후 5번째 열로 이동
             if (e.ColumnIndex == 2)
             {
-                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[전표리스트단위.Index].Cells[4];
-                SendKeys.Send("{UP}");
-                SendKeys.Send("{Right}");
+                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[xPoint].Cells[4];
             }
 
             // 5번째 열 입력 후 8번째 열로 이동
             if (e.ColumnIndex == 4)
             {
-                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[전표리스트단위.Index].Cells[7];
-                SendKeys.Send("{UP}");
-                SendKeys.Send("{Right}");
+                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[xPoint].Cells["dataGridViewTextBoxColumn8"];
+                //dgv전표리스트.CurrentCell = dgv전표리스트.Rows[전표리스트단위.Index].Cells[7];
             }
 
             // 8번째 열 입력 후 9번째 열로 이동
             if (e.ColumnIndex == 7)
             {
-                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[전표리스트단위.Index].Cells[8];
-                SendKeys.Send("{UP}");
-                SendKeys.Send("{Right}");
+                dgv전표리스트.CurrentCell = dgv전표리스트.Rows[xPoint].Cells[8];
+                //dgv전표리스트.CurrentCell = dgv전표리스트.Rows[전표리스트단위.Index].Cells[8];
             }
         }
         private void Dgv전표리스트_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -943,6 +954,13 @@ namespace SMART_ERP_System.MenuUserControl
         private void Cbb사업장코드_SelectedValueChanged(object sender, EventArgs e)
         {
             txb사업장명.Text = DB.사업장.SearchChangedValue(cbb사업장코드.Text);
+        }
+
+        private void Dgv전표리스트_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            xPoint = e.RowIndex;
+            yPoint = e.ColumnIndex;
+
         }
     }
 }

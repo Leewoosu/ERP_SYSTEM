@@ -53,6 +53,12 @@ namespace SMART_ERP_System.Class
         public static string SelectAccountName { get; set; }
     }
 
+    public static class 제품단위
+    {
+        public static string Code { get; set; }
+        public static string SendCode { get; set; }
+    }
+
     public static class 관할세무서단위
     {
         public static string CompetentTaxOfficeCode { get; set; }

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblItemNum = new System.Windows.Forms.Label();
             this.lbl품목번호 = new System.Windows.Forms.Label();
             this.lblOutside = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
             this.lblCompleteProcess = new System.Windows.Forms.Label();
             this.btn작업종료 = new MetroFramework.Controls.MetroButton();
             this.cbx공정완료 = new MetroFramework.Controls.MetroCheckBox();
-            this.btn실적취소 = new MetroFramework.Controls.MetroButton();
             this.btn실적등록 = new MetroFramework.Controls.MetroButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lbIndex = new System.Windows.Forms.Label();
@@ -64,9 +63,6 @@
             this.작업자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.실적등록시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid불량현황 = new MetroFramework.Controls.MetroGrid();
-            this.불량수량1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.불량등록시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.불량_비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbx생산수량 = new MetroFramework.Controls.MetroTextBox();
             this.tbx불량수량 = new MetroFramework.Controls.MetroTextBox();
             this.cbb공정 = new MetroFramework.Controls.MetroComboBox();
@@ -86,6 +82,9 @@
             this.lbl드릴잔량 = new System.Windows.Forms.Label();
             this.lbl벤딩잔량 = new System.Windows.Forms.Label();
             this.lbl현재공정 = new System.Windows.Forms.Label();
+            this.불량수량1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.불량등록시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.불량_비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid실적현황)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid불량현황)).BeginInit();
             this.SuspendLayout();
@@ -286,7 +285,7 @@
             this.btn작업종료.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn작업종료.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn작업종료.Highlight = true;
-            this.btn작업종료.Location = new System.Drawing.Point(939, 395);
+            this.btn작업종료.Location = new System.Drawing.Point(939, 285);
             this.btn작업종료.Name = "btn작업종료";
             this.btn작업종료.Size = new System.Drawing.Size(149, 77);
             this.btn작업종료.TabIndex = 45;
@@ -311,23 +310,6 @@
             this.cbx공정완료.UseSelectable = true;
             this.cbx공정완료.UseStyleColors = true;
             this.cbx공정완료.CheckedChanged += new System.EventHandler(this.Cbx공정완료_CheckedChanged);
-            // 
-            // btn실적취소
-            // 
-            this.btn실적취소.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
-            this.btn실적취소.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btn실적취소.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn실적취소.Highlight = true;
-            this.btn실적취소.Location = new System.Drawing.Point(939, 278);
-            this.btn실적취소.Name = "btn실적취소";
-            this.btn실적취소.Size = new System.Drawing.Size(149, 84);
-            this.btn실적취소.TabIndex = 48;
-            this.btn실적취소.Text = "실적취소";
-            this.btn실적취소.UseCustomBackColor = true;
-            this.btn실적취소.UseCustomForeColor = true;
-            this.btn실적취소.UseSelectable = true;
-            this.btn실적취소.UseStyleColors = true;
-            this.btn실적취소.Click += new System.EventHandler(this.Btn재발행_Click);
             // 
             // btn실적등록
             // 
@@ -402,29 +384,29 @@
             this.grid실적현황.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid실적현황.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grid실적현황.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid실적현황.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.grid실적현황.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid실적현황.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid실적현황.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid실적현황.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.실적수량,
             this.불량실적,
             this.공정명,
             this.작업자,
             this.실적등록시간});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid실적현황.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid실적현황.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid실적현황.EnableHeadersVisualStyles = false;
             this.grid실적현황.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grid실적현황.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -432,14 +414,14 @@
             this.grid실적현황.Name = "grid실적현황";
             this.grid실적현황.ReadOnly = true;
             this.grid실적현황.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid실적현황.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid실적현황.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grid실적현황.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid실적현황.RowTemplate.Height = 23;
             this.grid실적현황.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -486,64 +468,46 @@
             this.grid불량현황.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid불량현황.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grid불량현황.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid불량현황.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.grid불량현황.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid불량현황.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.grid불량현황.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid불량현황.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.불량수량1,
             this.불량등록시간,
             this.불량_비고});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid불량현황.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid불량현황.DefaultCellStyle = dataGridViewCellStyle5;
             this.grid불량현황.EnableHeadersVisualStyles = false;
             this.grid불량현황.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grid불량현황.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grid불량현황.Location = new System.Drawing.Point(3, 395);
             this.grid불량현황.Name = "grid불량현황";
             this.grid불량현황.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid불량현황.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid불량현황.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grid불량현황.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid불량현황.RowTemplate.Height = 23;
             this.grid불량현황.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid불량현황.Size = new System.Drawing.Size(920, 153);
             this.grid불량현황.TabIndex = 54;
-            // 
-            // 불량수량1
-            // 
-            this.불량수량1.HeaderText = "불량수량";
-            this.불량수량1.Name = "불량수량1";
-            this.불량수량1.ReadOnly = true;
-            // 
-            // 불량등록시간
-            // 
-            this.불량등록시간.HeaderText = "등록시간";
-            this.불량등록시간.Name = "불량등록시간";
-            this.불량등록시간.ReadOnly = true;
-            // 
-            // 불량_비고
-            // 
-            this.불량_비고.HeaderText = "비고";
-            this.불량_비고.Name = "불량_비고";
-            this.불량_비고.Width = 200;
             // 
             // tbx생산수량
             // 
@@ -802,6 +766,25 @@
             this.lbl현재공정.TabIndex = 78;
             this.lbl현재공정.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // 불량수량1
+            // 
+            this.불량수량1.HeaderText = "불량수량";
+            this.불량수량1.Name = "불량수량1";
+            this.불량수량1.ReadOnly = true;
+            // 
+            // 불량등록시간
+            // 
+            this.불량등록시간.HeaderText = "등록시간";
+            this.불량등록시간.Name = "불량등록시간";
+            this.불량등록시간.ReadOnly = true;
+            this.불량등록시간.Width = 150;
+            // 
+            // 불량_비고
+            // 
+            this.불량_비고.HeaderText = "비고";
+            this.불량_비고.Name = "불량_비고";
+            this.불량_비고.Width = 200;
+            // 
             // WorkStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -832,7 +815,6 @@
             this.Controls.Add(this.lbIndex);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn실적등록);
-            this.Controls.Add(this.btn실적취소);
             this.Controls.Add(this.cbx공정완료);
             this.Controls.Add(this.btn작업종료);
             this.Controls.Add(this.lblCompleteProcess);
@@ -875,7 +857,6 @@
         private System.Windows.Forms.Label lblCompleteProcess;
         private MetroFramework.Controls.MetroButton btn작업종료;
         private MetroFramework.Controls.MetroCheckBox cbx공정완료;
-        private MetroFramework.Controls.MetroButton btn실적취소;
         private MetroFramework.Controls.MetroButton btn실적등록;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbIndex;
@@ -890,9 +871,6 @@
         public System.Windows.Forms.Label lbl작업시작시간;
         public MetroFramework.Controls.MetroTextBox tbx생산수량;
         public MetroFramework.Controls.MetroTextBox tbx불량수량;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 불량수량1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 불량등록시간;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 불량_비고;
         private MetroFramework.Controls.MetroComboBox cbb공정;
         private System.Windows.Forms.DataGridViewTextBoxColumn 실적수량;
         private System.Windows.Forms.DataGridViewTextBoxColumn 불량실적;
@@ -915,5 +893,8 @@
         public System.Windows.Forms.Label lbl드릴잔량;
         public System.Windows.Forms.Label lbl벤딩잔량;
         public System.Windows.Forms.Label lbl현재공정;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 불량수량1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 불량등록시간;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 불량_비고;
     }
 }

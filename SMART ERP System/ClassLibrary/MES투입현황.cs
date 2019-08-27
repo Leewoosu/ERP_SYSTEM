@@ -25,9 +25,9 @@ namespace ClassLibrary
         public bool 자재불출 { get; set; }
         public int 투입수량 { get; set; }
         public System.DateTime 투입일 { get; set; }
-        public Nullable<int> 작업순위 { get; set; }
         public string 공정 { get; set; }
     
+        public virtual MES공정별수량 MES공정별수량 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MES현장실적현황> MES현장실적현황 { get; set; }
     }

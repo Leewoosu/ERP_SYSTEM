@@ -148,7 +148,7 @@ namespace ClassLibrary.EntityData
         /// <param name="i">해당 개수</param>
         public void FillIn전표리스트List(DateTime dateTime, DataGridView gridView, List<전표리스트> 전표리스트s, string number, int cnt)
         {
-            for (int i = 0; i < cnt + 1; i++)
+            for (int i = 0; i < cnt; i++)
             {
                 if (gridView.Rows[i].Cells[gridView.Columns.Count - 1].Value != null)
                 {
@@ -167,7 +167,7 @@ namespace ClassLibrary.EntityData
                         list.거래처코드번호 = gridView.Rows[i].Cells[4].Value.ToString();
 
                     if (gridView.Rows[i].Cells[7].Value != null)
-                        list.금액 = int.Parse(gridView.Rows[i].Cells[7].Value.ToString());
+                        list.금액 = int.Parse(gridView.Rows[i].Cells[7].Value.ToString().Replace(",", ""));
 
                     if (gridView.Rows[i].Cells[8].Value != null)
                         list.적요명 = gridView.Rows[i].Cells[8].Value.ToString();

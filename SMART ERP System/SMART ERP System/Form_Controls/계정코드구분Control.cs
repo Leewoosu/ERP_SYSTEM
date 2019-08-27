@@ -52,7 +52,7 @@ namespace SMART_ERP_System.MainForm_Control
                 계정과목단위.AccountName = accountName;
 
                 codeHelperForm.Close();
-                keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
+                //keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
             }
 
             if(e.KeyData == Keys.Escape)
@@ -84,7 +84,7 @@ namespace SMART_ERP_System.MainForm_Control
             계정과목단위.AccountName = accountName;
 
             codeHelperForm.Close();
-            keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
+            //keybd_event((byte)Keys.Enter, 0x0D, 0x01, 0); // DownUp
         }
     }
 }

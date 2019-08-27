@@ -6,15 +6,16 @@
         <MappingFragment StoreEntitySet="MES공정별수량">
           <ScalarProperty Name="관리번호" ColumnName="관리번호" />
           <ScalarProperty Name="제품번호" ColumnName="제품번호" />
-          <ScalarProperty Name="절단지시수량" ColumnName="절단지시수량" />
-          <ScalarProperty Name="벤딩지시수량" ColumnName="벤딩지시수량" />
-          <ScalarProperty Name="드릴지시수량" ColumnName="드릴지시수량" />
-          <ScalarProperty Name="용접지시수량" ColumnName="용접지시수량" />
+          <ScalarProperty Name="절단생산수량" ColumnName="절단생산수량" />
+          <ScalarProperty Name="벤딩생산수량" ColumnName="벤딩생산수량" />
+          <ScalarProperty Name="드릴생산수량" ColumnName="드릴생산수량" />
+          <ScalarProperty Name="용접생산수량" ColumnName="용접생산수량" />
           <ScalarProperty Name="절단불량수량" ColumnName="절단불량수량" />
           <ScalarProperty Name="벤딩불량수량" ColumnName="벤딩불량수량" />
           <ScalarProperty Name="드릴불량수량" ColumnName="드릴불량수량" />
           <ScalarProperty Name="용접불량수량" ColumnName="용접불량수량" />
           <ScalarProperty Name="실적시간" ColumnName="실적시간" />
+          <ScalarProperty Name="완료유무" ColumnName="완료유무" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -52,7 +53,6 @@
           <ScalarProperty Name="자재불출" ColumnName="자재불출" />
           <ScalarProperty Name="투입수량" ColumnName="투입수량" />
           <ScalarProperty Name="투입일" ColumnName="투입일" />
-          <ScalarProperty Name="작업순위" ColumnName="작업순위" />
           <ScalarProperty Name="공정" ColumnName="공정" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -869,6 +869,7 @@
           <ScalarProperty Name="품목군" ColumnName="품목군" />
           <ScalarProperty Name="검사여부" ColumnName="검사여부" />
           <ScalarProperty Name="단위" ColumnName="단위" />
+          <ScalarProperty Name="관리단위" ColumnName="관리단위" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

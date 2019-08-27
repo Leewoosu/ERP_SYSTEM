@@ -216,6 +216,7 @@
             this.label11.Size = new System.Drawing.Size(37, 14);
             this.label11.TabIndex = 38;
             this.label11.Text = "사원";
+            this.label11.Visible = false;
             // 
             // textBox15
             // 
@@ -224,6 +225,7 @@
             this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(111, 20);
             this.textBox15.TabIndex = 128;
+            this.textBox15.Visible = false;
             // 
             // textBox14
             // 
@@ -232,6 +234,7 @@
             this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(67, 20);
             this.textBox14.TabIndex = 127;
+            this.textBox14.Visible = false;
             // 
             // label2
             // 
@@ -242,6 +245,7 @@
             this.label2.Size = new System.Drawing.Size(37, 14);
             this.label2.TabIndex = 135;
             this.label2.Text = "고객";
+            this.label2.Visible = false;
             // 
             // 고객이름
             // 
@@ -250,6 +254,7 @@
             this.고객이름.ReadOnly = true;
             this.고객이름.Size = new System.Drawing.Size(111, 20);
             this.고객이름.TabIndex = 137;
+            this.고객이름.Visible = false;
             // 
             // 고객번호
             // 
@@ -258,6 +263,7 @@
             this.고객번호.ReadOnly = true;
             this.고객번호.Size = new System.Drawing.Size(67, 20);
             this.고객번호.TabIndex = 136;
+            this.고객번호.Visible = false;
             // 
             // groupBox1
             // 

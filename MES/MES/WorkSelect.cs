@@ -97,7 +97,7 @@ namespace MES
         private void WorkSelect_Load(object sender, EventArgs e)
         {
 
-            UserControlList.workSelect.라인별작업지시("소형라인");
+            UserControlList.workSelect.라인별작업지시("전체");
         }
 
         private void Grid작업지시목록_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -242,7 +242,7 @@ namespace MES
 
             #region 배경색
             List<Color> 배경색list = new List<Color>();
-            배경색list.Add(Color.FromArgb(17, 138, 178));
+            배경색list.Add(Color.FromArgb(17, 138, 140));
             배경색list.Add(Color.FromArgb(239, 71, 111));
             배경색list.Add(Color.FromArgb(255, 209, 102));
             배경색list.Add(Color.FromArgb(6, 214, 160));
@@ -273,18 +273,24 @@ namespace MES
                 List<MES투입현황> MaterialList = TOTlist.Where(z => z.제품번호.Trim() == 블럭item.Key.Trim()).ToList();
 
                 cnt = 0;
+
                 foreach (var items in MaterialList)
                 {
                     if (Info[0]._2차공정시작 == true)
                     {
                         grid작업지시목록.Rows[itemCnt].Cells[ColumnIndex++].Value = items.관리번호.ToString();
-                        grid작업지시목록.Rows[itemCnt].Cells[7].Style.BackColor = Color.FromArgb(254, 251, 208);
+                        grid작업지시목록.Rows[itemCnt].Cells[7].Style.BackColor = Color.FromArgb(255, 255, 0);
+                        grid작업지시목록.Rows[itemCnt].Cells[7].Style.ForeColor = Color.FromArgb(0, 0, 0);
                         grid작업지시목록.Rows[itemCnt].Cells[ColumnIndex++].Value = items.공정.ToString();
-                        grid작업지시목록.Rows[itemCnt].Cells[8].Style.BackColor = Color.FromArgb(254, 251, 208);
+                        grid작업지시목록.Rows[itemCnt].Cells[8].Style.BackColor = Color.FromArgb(255, 255, 0);
+                        grid작업지시목록.Rows[itemCnt].Cells[8].Style.ForeColor = Color.FromArgb(0, 0, 0);
                         grid작업지시목록.Rows[itemCnt].Cells[ColumnIndex++].Value = items.투입수량.ToString();
-                        grid작업지시목록.Rows[itemCnt].Cells[9].Style.BackColor = Color.FromArgb(254, 251, 208);
+                        grid작업지시목록.Rows[itemCnt].Cells[9].Style.BackColor = Color.FromArgb(255, 255, 0);
+                        grid작업지시목록.Rows[itemCnt].Cells[9].Style.ForeColor = Color.FromArgb(0, 0, 0);
+
                         grid작업지시목록.Rows[itemCnt].Cells[ColumnIndex++].Value = items.투입일.ToString().Substring(2, 8).ToString();
-                        grid작업지시목록.Rows[itemCnt].Cells[10].Style.BackColor = Color.FromArgb(254, 251, 208);
+                        grid작업지시목록.Rows[itemCnt].Cells[10].Style.BackColor = Color.FromArgb(255, 255, 0);
+                        grid작업지시목록.Rows[itemCnt].Cells[10].Style.ForeColor = Color.FromArgb(0, 0, 0);
                     }
                     else
                     {

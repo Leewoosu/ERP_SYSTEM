@@ -73,6 +73,15 @@ namespace MES
         // 실적등록 버튼이 눌러지면 나오는 확인창 Yes 누르면 발생
         private void Btn실적등록ed()
         {
+            if (lbl절단잔량.Text.IsNullOrEmpty())
+                lbl절단잔량.Text = "0";
+
+            if (lbl벤딩잔량.Text.IsNullOrEmpty())
+                lbl벤딩잔량.Text = "0";
+
+            if (lbl드릴잔량.Text.IsNullOrEmpty())
+                lbl드릴잔량.Text = "0";
+
             #region 실적등록 못하는 모든 경우를 메세지박스로 표시 후 리턴 , 여기에 지시수량,생산수량,불량수량값 있음
             if (UserControlList.workSelect.WorkStart == false)
             {
@@ -166,17 +175,17 @@ namespace MES
             공정별수량c.실적시간 = DateTime.Now;
             if ((string)cbb공정.SelectedItem == "절단")
             {
-                공정별수량c.절단생산수량 += 생산수량;
+                공정별수량c.절단생산수량 += (생산수량 - 불량수량);
             }
 
             else if ((string)cbb공정.SelectedItem == "벤딩")
-                공정별수량c.벤딩생산수량 += 생산수량;
+                공정별수량c.벤딩생산수량 += (생산수량 - 불량수량);
 
             else if ((string)cbb공정.SelectedItem == "드릴")
-                공정별수량c.드릴생산수량 += 생산수량;
+                공정별수량c.드릴생산수량 += (생산수량 - 불량수량);
 
             else if ((string)cbb공정.SelectedItem == "용접")
-                공정별수량c.용접생산수량 += 생산수량;
+                공정별수량c.용접생산수량 += (생산수량 - 불량수량);
 
             #region grid실적현황 값 넣기
             grid실적현황.Rows.Add();
@@ -205,6 +214,10 @@ namespace MES
                 현장실적현황class.완료유무 = false;
 
             현장실적현황list.Add(현장실적현황class);
+
+            // 공정별수량 업데이트
+            DB.MES공정별수량.Update(공정별수량c);
+            DB.MES현장실적현황.Insert(현장실적현황class);
 
             int 불량현황ColumnIndex = 0;
 
@@ -256,9 +269,7 @@ namespace MES
             }
             #endregion
 
-            // 공정별수량 업데이트
-            DB.MES공정별수량.Update(공정별수량c);
-            DB.MES현장실적현황.Insert(현장실적현황class);
+
             
             실적현황행번호++;
             실적번호순서++;
@@ -266,33 +277,47 @@ namespace MES
             공정상태();
 
             #region 공정별 작업이 끝날경우 , 잔량이 0일경우
-            if (int.Parse(lbl절단잔량.Text) <= 0 && 절단상태 == true)
+            if (int.Parse(lbl절단잔량.Text) <= 0 && 투입공정현황 == "절단")
             {
                 lbl절단잔량.Text = "0";
                 투입공정현황 = "벤딩";
                 절단상태 = false;
             }
 
-            else if (int.Parse(lbl벤딩잔량.Text) <= 0 && 벤딩상태 == true)
+            else if (int.Parse(lbl벤딩잔량.Text) <= 0 && 투입공정현황 == "벤딩")
             {
                 lbl벤딩잔량.Text = "0";
                 투입공정현황 = "드릴";
                 벤딩상태 = false;
             }
 
-            else if (int.Parse(lbl드릴잔량.Text) <= 0 && 드릴상태 == true)
+            else if (int.Parse(lbl드릴잔량.Text) <= 0 && 투입공정현황 == "드릴")
             {
                 lbl드릴잔량.Text = "0";
                 투입공정현황 = "용접";
                 드릴상태 = false;
             }
 
-            else if (int.Parse(lbl용접잔량.Text) <= 0 && 용접상태 == true)
+            else if (int.Parse(lbl용접잔량.Text) <= 0 && 투입공정현황 == "용접")
             {
                 MessageBox.Show("용접까지 전부 완료하셨습니다. 작업을 종료합니다.");
-                btn작업종료.PerformClick();
+                작업종료ed();
+                작업종료(null, null);
+                cbb공정.Items.Clear();
+
+                UserControlList.workSelect.WorkStart = false;
             }
             #endregion
+
+            if(cbx공정완료.Checked == true)
+            {
+                작업종료ed();
+                작업종료(null, null);
+                cbb공정.Items.Clear();
+
+                MessageBox.Show("작업이 종료되었습니다.");
+                UserControlList.workSelect.WorkStart = false;
+            }
 
             공정콤보박스만초기화 = true;
             공정상태();
@@ -320,84 +345,110 @@ namespace MES
 
             else
             {
-                List<MES투입현황> MES투입현황list = DB.MES투입현황.Get투입현황_Rows(lbl관리번호.Text.Trim());
-
-                MES투입현황list[0].공정 = 투입공정현황.ToString();
-                MES투입현황list[0].투입수량 = int.Parse(lbl지시수량.Text);
-
-                DB.MES투입현황.Update(MES투입현황list[0]);
-
-                if ((MES투입현황list[0].투입수량 == 0) || (cbx공정완료.Checked == true))
+                if (MessageBox.Show("작업을 종료하시겠습니까?", "작업종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    MessageBox.Show("공정이 완료되었습니다.");
-                    DB.MES투입현황.Delete(MES투입현황list[0]);
+                    작업종료ed();
+                    작업종료(sender, e);
+                    cbb공정.Items.Clear();
+
+                    MessageBox.Show("작업이 종료되었습니다.");
+                    UserControlList.workSelect.WorkStart = false;
                 }
 
-                #region label값, 그리드, 리스트, 클래스 초기화
-
-                grid불량현황.Rows.Clear();
-                grid실적현황.Rows.Clear();
-                cbx공정완료.CheckState = CheckState.Unchecked;
-                lbl관리번호.Text = null;
-                lbl규격.Text = null;
-                lbl작업시작시간.Text = null;
-                lbl지시수량.Text = null;
-                lbl품목번호.Text = null;
-                tbx불량수량.Text = null;
-                tbx생산수량.Text = null;
-                투입공정현황 = null;
-                lbl절단생산수량.Text = null;
-                lbl벤딩생산수량.Text = null;
-                lbl드릴생산수량.Text = null;
-                lbl용접생산수량.Text = null;
-                lbl절단잔량.Text = null;
-                lbl벤딩잔량.Text = null;
-                lbl드릴잔량.Text = null;
-                lbl용접잔량.Text = null;
-                lbl현재공정.Text = null;
-
-                절단상태 = false;
-                벤딩상태 = false;
-                드릴상태 = false;
-                용접상태 = false;
-
-                공정콤보박스만초기화 = false;
-
-                절단불량수량 = 0;
-                벤딩불량수량 = 0;
-                드릴불량수량 = 0;
-                용접불량수량 = 0;
-
-                실적현황행번호 = 0;
-                불량현황행번호 = 0;
-                실적번호순서 = 0;
-
-                공정별수량c.제품번호 = null;
-                공정별수량c.관리번호 = null;
-                공정별수량c.절단생산수량 = 0;
-                공정별수량c.절단불량수량 = 0;
-                공정별수량c.벤딩생산수량 = 0;
-                공정별수량c.벤딩불량수량 = 0;
-                공정별수량c.드릴생산수량 = 0;
-                공정별수량c.드릴불량수량 = 0;
-                공정별수량c.용접생산수량 = 0;
-                공정별수량c.용접불량수량 = 0;
-                
-                공정별수량c.완료유무 = false;
-
-                현장실적현황list = null;
-                불량실적현황list = null;
-
-                현장실적현황list = new List<MES현장실적현황>();
-                불량실적현황list = new List<MES불량실적현황>();
-                #endregion
-
-                작업종료(sender, e);
-                cbb공정.Items.Clear();
-
-                MessageBox.Show("작업이 종료되었습니다.");
-                UserControlList.workSelect.WorkStart = false;
+                else
+                {
+                    return;
+                }
             }
+        }
+
+        private void 작업종료ed()
+        {
+            List<MES투입현황> MES투입현황list = DB.MES투입현황.Get투입현황_Rows(lbl관리번호.Text.Trim());
+
+            MES투입현황list[0].공정 = 투입공정현황.ToString();
+            MES투입현황list[0].투입수량 = int.Parse(lbl지시수량.Text);
+
+            DB.MES투입현황.Update(MES투입현황list[0]);
+
+            if ((MES투입현황list[0].투입수량 == 0) || (cbx공정완료.Checked == true))
+            {
+                MessageBox.Show("공정이 완료되었습니다.");
+                for (int i = 0; i < UserControlList.workSelect.grid작업지시목록.Rows.Count - 1; i++)
+                    if (UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[3].Value.ToString() ==
+                        lbl관리번호.Text.Trim().ToString())
+                    {
+                        UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[4].Style.BackColor = Color.FromArgb(225, 0, 0);
+                        UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[5].Style.BackColor = Color.FromArgb(225, 0, 0);
+                        UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[6].Style.BackColor = Color.FromArgb(225, 0, 0);
+                        UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[4].Style.ForeColor = Color.FromArgb(0, 0, 0);
+                        UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[5].Style.ForeColor = Color.FromArgb(0, 0, 0);
+                        UserControlList.workSelect.grid작업지시목록.Rows[i].Cells[6].Style.ForeColor = Color.FromArgb(0, 0, 0);
+                    }
+                            
+
+            }
+
+            #region label값, 그리드, 리스트, 클래스 초기화
+
+            grid불량현황.Rows.Clear();
+            grid실적현황.Rows.Clear();
+            cbx공정완료.CheckState = CheckState.Unchecked;
+            lbl관리번호.Text = null;
+            lbl규격.Text = null;
+            lbl작업시작시간.Text = null;
+            lbl지시수량.Text = null;
+            lbl품목번호.Text = null;
+            tbx불량수량.Text = null;
+            tbx생산수량.Text = null;
+            투입공정현황 = null;
+            lbl절단생산수량.Text = null;
+            lbl벤딩생산수량.Text = null;
+            lbl드릴생산수량.Text = null;
+            lbl용접생산수량.Text = null;
+            lbl절단잔량.Text = null;
+            lbl벤딩잔량.Text = null;
+            lbl드릴잔량.Text = null;
+            lbl용접잔량.Text = null;
+            lbl현재공정.Text = null;
+
+            절단상태 = false;
+            벤딩상태 = false;
+            드릴상태 = false;
+            용접상태 = false;
+
+            공정콤보박스만초기화 = false;
+
+            절단불량수량 = 0;
+            벤딩불량수량 = 0;
+            드릴불량수량 = 0;
+            용접불량수량 = 0;
+
+            실적현황행번호 = 0;
+            불량현황행번호 = 0;
+            실적번호순서 = 0;
+
+            공정별수량c.제품번호 = null;
+            공정별수량c.관리번호 = null;
+            공정별수량c.절단생산수량 = 0;
+            공정별수량c.절단불량수량 = 0;
+            공정별수량c.벤딩생산수량 = 0;
+            공정별수량c.벤딩불량수량 = 0;
+            공정별수량c.드릴생산수량 = 0;
+            공정별수량c.드릴불량수량 = 0;
+            공정별수량c.용접생산수량 = 0;
+            공정별수량c.용접불량수량 = 0;
+
+            공정별수량c.완료유무 = false;
+
+            현장실적현황list = null;
+            불량실적현황list = null;
+
+            현장실적현황list = new List<MES현장실적현황>();
+            불량실적현황list = new List<MES불량실적현황>();
+            #endregion
+
+
         }
 
         // 실적번호순서 초기화, 실적현황,불량현황 전부 로드
@@ -505,7 +556,6 @@ namespace MES
 
             else
             {
-                MessageBox.Show("오류 : 투입공정이 잘못됨");
                 return;
             }
 
@@ -633,9 +683,18 @@ namespace MES
                     lbl용접잔량.Text = (int.Parse(lbl드릴생산수량.Text) - int.Parse(lbl용접생산수량.Text)).ToString();
             }
             #endregion
+
+            if (lbl절단잔량.Text.IsNullOrEmpty())
+                lbl절단잔량.Text = "0";
+
+            if (lbl벤딩잔량.Text.IsNullOrEmpty())
+                lbl벤딩잔량.Text = "0";
+
+            if (lbl드릴잔량.Text.IsNullOrEmpty())
+                lbl드릴잔량.Text = "0";
         }
 
-        
+
         private void Cbb공정_SelectedIndexChanged(object sender, EventArgs e)
         {
             #region cbb공정 선택시에 이벤트 발생

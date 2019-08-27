@@ -27,7 +27,6 @@ namespace MES
                 var q = from a in context.MES현장실적현황
                         select a;
 
-                MessageBox.Show($"{q.Count()}");
 
                 if (!tbxFirst품번.Text.IsNullOrEmpty())
                 {
@@ -36,7 +35,6 @@ namespace MES
                             select a;
                 }
 
-                MessageBox.Show($"{q.Count()}");
 
                 if (!((string)cbb공정.SelectedItem).IsNullOrEmpty())
                 {
@@ -45,24 +43,17 @@ namespace MES
                         select a;
                 }
 
-                MessageBox.Show($"{q.Count()}");
 
                 if (dtFirst != null && dtLast != null)
                 {
                     DateTime Startday = DateTime.Parse(dtFirst.Value.ToString("yyyy-MM-dd"));
-                    MessageBox.Show($"{Startday.ToString().Substring(0,10)}");
                     DateTime Endday = DateTime.Parse(dtLast.Value.ToString("yyyy-MM-dd"));
-                    MessageBox.Show($"{Endday.ToString().Substring(0,10)}");
 
                     q = from b in q
                         where Startday <= b.실적등록시간 &&
                         Endday >= b.실적등록시간
                         select b;
                 }
-
-                MessageBox.Show($"{q.Count()}");
-
-
 
                 if (!tbx관리번호.Text.IsNullOrEmpty())
                 {
@@ -71,8 +62,6 @@ namespace MES
                         select a;
                 }
 
-                MessageBox.Show($"{q.Count()}");
-
                 if (!tbx사원번호.Text.IsNullOrEmpty())
                 {
                     q = from a in q
@@ -80,15 +69,19 @@ namespace MES
                                where a.작업자 == x.사원명
                                select x.사원코드).Contains(tbx사원번호.Text.ToString())
                         select a;
-
                 }
-
-                MessageBox.Show($"{q.Count()}");
 
                 int ColumnIndex = 0;
                 int 생산실적행번호 = 0;
 
-                foreach(var item in q)
+                if (q.Count() <= 0)
+                {
+                    MessageBox.Show("검색된 데이터가 없습니다");
+                    return;
+                }
+
+
+                foreach (var item in q)
                 {
                     ColumnIndex = 0;
 

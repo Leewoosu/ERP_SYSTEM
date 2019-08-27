@@ -5,16 +5,17 @@
       <PropertyRef Name="관리번호" />
     </Key>
     <Property Name="관리번호" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="제품번호" Type="nvarchar" MaxLength="50" />
-    <Property Name="절단지시수량" Type="int" />
-    <Property Name="벤딩지시수량" Type="int" />
-    <Property Name="드릴지시수량" Type="int" />
-    <Property Name="용접지시수량" Type="int" />
-    <Property Name="절단불량수량" Type="int" />
-    <Property Name="벤딩불량수량" Type="int" />
-    <Property Name="드릴불량수량" Type="int" />
-    <Property Name="용접불량수량" Type="int" />
+    <Property Name="제품번호" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="절단생산수량" Type="int" Nullable="false" />
+    <Property Name="벤딩생산수량" Type="int" Nullable="false" />
+    <Property Name="드릴생산수량" Type="int" Nullable="false" />
+    <Property Name="용접생산수량" Type="int" Nullable="false" />
+    <Property Name="절단불량수량" Type="int" Nullable="false" />
+    <Property Name="벤딩불량수량" Type="int" Nullable="false" />
+    <Property Name="드릴불량수량" Type="int" Nullable="false" />
+    <Property Name="용접불량수량" Type="int" Nullable="false" />
     <Property Name="실적시간" Type="datetime" />
+    <Property Name="완료유무" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="MES불량실적현황">
     <Key>
@@ -49,7 +50,6 @@
     <Property Name="자재불출" Type="bit" Nullable="false" />
     <Property Name="투입수량" Type="int" Nullable="false" />
     <Property Name="투입일" Type="date" Nullable="false" />
-    <Property Name="작업순위" Type="int" />
     <Property Name="공정" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="MES현장실적현황">
@@ -541,10 +541,10 @@
       <PropertyRef Name="사업장코드" />
     </Key>
     <Property Name="사업장코드" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="사업장명" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="사업장등록번호" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="사업장명" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="사업장등록번호" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="대표자명" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="사업장주소" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="사업장주소" Type="nvarchar" MaxLength="60" Nullable="false" />
     <Property Name="사업장번지" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="사업장전화번호" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="업태" Type="nvarchar" MaxLength="30" Nullable="false" />
@@ -571,7 +571,7 @@
     <Property Name="부서코드" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="입사일" Type="datetime" Nullable="false" />
     <Property Name="퇴사일" Type="datetime" />
-    <Property Name="사용자여부" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="사용자여부" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="조회권한" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="비상연락망" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="암호" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -846,6 +846,7 @@
     <Property Name="품목군" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="검사여부" Type="bit" Nullable="false" />
     <Property Name="단위" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="관리단위" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="자재명세서">
     <Key>
@@ -990,7 +991,7 @@
     <Property Name="층" Type="int" Nullable="false" />
     <Property Name="리드타임" Type="int" Nullable="false" />
     <Property Name="LOT수량" Type="int" Nullable="false" />
-    <Property Name="검사여부" Type="bit" />
+    <Property Name="검사여부" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="퇴직공제항목">
     <Key>
@@ -1104,6 +1105,18 @@
     <Property Name="개업연월일" Type="date" Nullable="false" />
     <Property Name="폐업연월일" Type="date" />
   </EntityType>
+  <Association Name="FK_MES공정별수량_MES투입현황">
+    <End Role="MES투입현황" Type="Self.MES투입현황" Multiplicity="1" />
+    <End Role="MES공정별수량" Type="Self.MES공정별수량" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MES투입현황">
+        <PropertyRef Name="관리번호" />
+      </Principal>
+      <Dependent Role="MES공정별수량">
+        <PropertyRef Name="관리번호" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_MES불량실적현황_MES현장실적현황">
     <End Role="MES현장실적현황" Type="Self.MES현장실적현황" Multiplicity="1" />
     <End Role="MES불량실적현황" Type="Self.MES불량실적현황" Multiplicity="0..1" />
@@ -1112,6 +1125,18 @@
         <PropertyRef Name="실적번호" />
       </Principal>
       <Dependent Role="MES불량실적현황">
+        <PropertyRef Name="실적번호" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MES상세실적현황_MES현장실적현황">
+    <End Role="MES현장실적현황" Type="Self.MES현장실적현황" Multiplicity="1" />
+    <End Role="MES상세실적현황" Type="Self.MES상세실적현황" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MES현장실적현황">
+        <PropertyRef Name="실적번호" />
+      </Principal>
+      <Dependent Role="MES상세실적현황">
         <PropertyRef Name="실적번호" />
       </Dependent>
     </ReferentialConstraint>
@@ -1932,9 +1957,17 @@
     [공지사항].[내용] AS [내용]
     FROM [dbo].[공지사항] AS [공지사항]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_MES공정별수량_MES투입현황" Association="Self.FK_MES공정별수량_MES투입현황">
+      <End Role="MES투입현황" EntitySet="MES투입현황" />
+      <End Role="MES공정별수량" EntitySet="MES공정별수량" />
+    </AssociationSet>
     <AssociationSet Name="FK_MES불량실적현황_MES현장실적현황" Association="Self.FK_MES불량실적현황_MES현장실적현황">
       <End Role="MES현장실적현황" EntitySet="MES현장실적현황" />
       <End Role="MES불량실적현황" EntitySet="MES불량실적현황" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MES상세실적현황_MES현장실적현황" Association="Self.FK_MES상세실적현황_MES현장실적현황">
+      <End Role="MES현장실적현황" EntitySet="MES현장실적현황" />
+      <End Role="MES상세실적현황" EntitySet="MES상세실적현황" />
     </AssociationSet>
     <AssociationSet Name="FK_거래처_전표리스트1" Association="Self.FK_거래처_전표리스트1">
       <End Role="전표리스트" EntitySet="전표리스트" />

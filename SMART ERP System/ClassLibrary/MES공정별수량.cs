@@ -16,14 +16,17 @@ namespace ClassLibrary
     {
         public string 관리번호 { get; set; }
         public string 제품번호 { get; set; }
-        public Nullable<int> 절단지시수량 { get; set; }
-        public Nullable<int> 벤딩지시수량 { get; set; }
-        public Nullable<int> 드릴지시수량 { get; set; }
-        public Nullable<int> 용접지시수량 { get; set; }
-        public Nullable<int> 절단불량수량 { get; set; }
-        public Nullable<int> 벤딩불량수량 { get; set; }
-        public Nullable<int> 드릴불량수량 { get; set; }
-        public Nullable<int> 용접불량수량 { get; set; }
+        public int 절단생산수량 { get; set; }
+        public int 벤딩생산수량 { get; set; }
+        public int 드릴생산수량 { get; set; }
+        public int 용접생산수량 { get; set; }
+        public int 절단불량수량 { get; set; }
+        public int 벤딩불량수량 { get; set; }
+        public int 드릴불량수량 { get; set; }
+        public int 용접불량수량 { get; set; }
         public Nullable<System.DateTime> 실적시간 { get; set; }
+        public bool 완료유무 { get; set; }
+    
+        public virtual MES투입현황 MES투입현황 { get; set; }
     }
 }

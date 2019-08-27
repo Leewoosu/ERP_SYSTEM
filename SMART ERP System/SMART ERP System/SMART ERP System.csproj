@@ -78,6 +78,12 @@
     <Compile Include="Form_Controls\고정자산구분Control.Designer.cs">
       <DependentUpon>고정자산구분Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Controls\제품번호구분Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_Controls\제품번호구분Control.Designer.cs">
+      <DependentUpon>제품번호구분Control.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -492,6 +498,9 @@
     <EmbeddedResource Include="Form_Controls\고정자산구분Control.resx">
       <DependentUpon>고정자산구분Control.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Controls\제품번호구분Control.resx">
+      <DependentUpon>제품번호구분Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -717,6 +726,7 @@
     <None Include="Properties\DataSources\ClassLibrary.사원등록.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.손익계산서.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.일반거래처등록.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.자재명세서.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.재무상태표.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.전표.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.전표리스트.datasource" />

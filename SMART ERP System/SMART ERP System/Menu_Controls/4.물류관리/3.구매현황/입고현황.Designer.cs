@@ -103,10 +103,11 @@
             // cbb사원코드
             // 
             this.cbb사원코드.DataSource = this.사원등록BindingSource;
+            this.cbb사원코드.Font = new System.Drawing.Font("굴림", 9F);
             this.cbb사원코드.FormattingEnabled = true;
             this.cbb사원코드.Location = new System.Drawing.Point(424, 23);
             this.cbb사원코드.Name = "cbb사원코드";
-            this.cbb사원코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb사원코드.Size = new System.Drawing.Size(65, 20);
             this.cbb사원코드.TabIndex = 110;
             this.cbb사원코드.SelectedValueChanged += new System.EventHandler(this.Cbb사원코드_SelectedValueChanged);
             // 
@@ -117,10 +118,11 @@
             // cbb부서코드
             // 
             this.cbb부서코드.DataSource = this.부서등록BindingSource;
+            this.cbb부서코드.Font = new System.Drawing.Font("굴림", 9F);
             this.cbb부서코드.FormattingEnabled = true;
             this.cbb부서코드.Location = new System.Drawing.Point(94, 20);
             this.cbb부서코드.Name = "cbb부서코드";
-            this.cbb부서코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb부서코드.Size = new System.Drawing.Size(65, 20);
             this.cbb부서코드.TabIndex = 109;
             this.cbb부서코드.SelectedValueChanged += new System.EventHandler(this.Cbb부서코드_SelectedValueChanged);
             // 
@@ -130,16 +132,18 @@
             // 
             // txb사원명
             // 
+            this.txb사원명.Font = new System.Drawing.Font("굴림", 9F);
             this.txb사원명.Location = new System.Drawing.Point(496, 22);
             this.txb사원명.Name = "txb사원명";
-            this.txb사원명.Size = new System.Drawing.Size(108, 20);
+            this.txb사원명.Size = new System.Drawing.Size(108, 21);
             this.txb사원명.TabIndex = 108;
             // 
             // txb부서명
             // 
+            this.txb부서명.Font = new System.Drawing.Font("굴림", 9F);
             this.txb부서명.Location = new System.Drawing.Point(165, 20);
             this.txb부서명.Name = "txb부서명";
-            this.txb부서명.Size = new System.Drawing.Size(108, 20);
+            this.txb부서명.Size = new System.Drawing.Size(108, 21);
             this.txb부서명.TabIndex = 107;
             // 
             // label11
@@ -174,32 +178,36 @@
             // 
             // txb공급업체
             // 
+            this.txb공급업체.Font = new System.Drawing.Font("굴림", 9F);
             this.txb공급업체.Location = new System.Drawing.Point(95, 57);
             this.txb공급업체.Name = "txb공급업체";
-            this.txb공급업체.Size = new System.Drawing.Size(180, 20);
+            this.txb공급업체.Size = new System.Drawing.Size(180, 21);
             this.txb공급업체.TabIndex = 103;
             // 
             // OrderLast
             // 
+            this.OrderLast.Font = new System.Drawing.Font("굴림", 9F);
             this.OrderLast.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.OrderLast.Location = new System.Drawing.Point(833, 55);
             this.OrderLast.Name = "OrderLast";
-            this.OrderLast.Size = new System.Drawing.Size(96, 20);
+            this.OrderLast.Size = new System.Drawing.Size(96, 21);
             this.OrderLast.TabIndex = 102;
             // 
             // OrderStart
             // 
+            this.OrderStart.Font = new System.Drawing.Font("굴림", 9F);
             this.OrderStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.OrderStart.Location = new System.Drawing.Point(714, 55);
             this.OrderStart.Name = "OrderStart";
-            this.OrderStart.Size = new System.Drawing.Size(96, 20);
+            this.OrderStart.Size = new System.Drawing.Size(96, 21);
             this.OrderStart.TabIndex = 101;
             // 
             // txb입고번호
             // 
+            this.txb입고번호.Font = new System.Drawing.Font("굴림", 9F);
             this.txb입고번호.Location = new System.Drawing.Point(424, 57);
             this.txb입고번호.Name = "txb입고번호";
-            this.txb입고번호.Size = new System.Drawing.Size(180, 20);
+            this.txb입고번호.Size = new System.Drawing.Size(180, 21);
             this.txb입고번호.TabIndex = 100;
             // 
             // label15

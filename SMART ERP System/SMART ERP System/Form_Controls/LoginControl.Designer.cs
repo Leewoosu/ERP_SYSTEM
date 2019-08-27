@@ -33,10 +33,10 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.txbPassWord = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbEmployeeName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txbEmployeeCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txbEmployeeName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,12 +44,12 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txbEmployeeName);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnOk);
             this.groupBox1.Controls.Add(this.txbPassWord);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txbEmployeeName);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txbEmployeeCode);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -101,30 +101,10 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "암     호";
             // 
-            // txbEmployeeName
-            // 
-            this.txbEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbEmployeeName.Enabled = false;
-            this.txbEmployeeName.Location = new System.Drawing.Point(108, 51);
-            this.txbEmployeeName.Name = "txbEmployeeName";
-            this.txbEmployeeName.ReadOnly = true;
-            this.txbEmployeeName.Size = new System.Drawing.Size(110, 19);
-            this.txbEmployeeName.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(15, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "이     름";
-            // 
             // txbEmployeeCode
             // 
             this.txbEmployeeCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbEmployeeCode.Location = new System.Drawing.Point(108, 19);
+            this.txbEmployeeCode.Location = new System.Drawing.Point(108, 52);
             this.txbEmployeeCode.Name = "txbEmployeeCode";
             this.txbEmployeeCode.Size = new System.Drawing.Size(110, 19);
             this.txbEmployeeCode.TabIndex = 7;
@@ -134,11 +114,31 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Location = new System.Drawing.Point(15, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "사원코드";
+            // 
+            // txbEmployeeName
+            // 
+            this.txbEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbEmployeeName.Enabled = false;
+            this.txbEmployeeName.Location = new System.Drawing.Point(108, 19);
+            this.txbEmployeeName.Name = "txbEmployeeName";
+            this.txbEmployeeName.ReadOnly = true;
+            this.txbEmployeeName.Size = new System.Drawing.Size(110, 19);
+            this.txbEmployeeName.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(15, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "이     름";
             // 
             // LoginControl
             // 
@@ -158,12 +158,12 @@
         #endregion
         private System.Windows.Forms.TextBox txbPassWord;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txbEmployeeCode;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btnCancel;
-        public System.Windows.Forms.TextBox txbEmployeeName;
         public System.Windows.Forms.Button btnOk;
+        public System.Windows.Forms.TextBox txbEmployeeName;
+        private System.Windows.Forms.Label label2;
     }
 }

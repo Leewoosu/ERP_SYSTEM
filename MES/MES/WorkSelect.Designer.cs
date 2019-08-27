@@ -33,31 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkSelect));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
             this.grid작업지시목록 = new MetroFramework.Controls.MetroGrid();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
-            this.lbIndex = new System.Windows.Forms.Label();
-            this.btnWorkRestart = new MetroFramework.Controls.MetroButton();
-            this.btnWorkStart = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.lbl전체페이지 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbl관리번호 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl투입일자 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGridPageUp = new MetroFramework.Controls.MetroButton();
-            this.btngridListDown = new MetroFramework.Controls.MetroButton();
-            this.불량수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.현장실적현황DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl현재페이지 = new System.Windows.Forms.Label();
-            this.lbl비고 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.순위1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.필요량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,23 +47,24 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbIndex = new System.Windows.Forms.Label();
+            this.btnWorkStart = new MetroFramework.Controls.MetroButton();
+            this.lbl전체페이지 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbl관리번호 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl투입일자 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnGridPageUp = new MetroFramework.Controls.MetroButton();
+            this.btngridListDown = new MetroFramework.Controls.MetroButton();
+            this.불량수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.현장실적현황DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl현재페이지 = new System.Windows.Forms.Label();
+            this.lbl비고 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid작업지시목록)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroCheckBox2
-            // 
-            this.metroCheckBox2.AutoSize = true;
-            this.metroCheckBox2.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.metroCheckBox2.Location = new System.Drawing.Point(921, 241);
-            this.metroCheckBox2.Name = "metroCheckBox2";
-            this.metroCheckBox2.Size = new System.Drawing.Size(146, 25);
-            this.metroCheckBox2.TabIndex = 65;
-            this.metroCheckBox2.Text = "작업 완료 보기";
-            this.metroCheckBox2.UseCustomBackColor = true;
-            this.metroCheckBox2.UseCustomForeColor = true;
-            this.metroCheckBox2.UseSelectable = true;
-            this.metroCheckBox2.UseStyleColors = true;
             // 
             // grid작업지시목록
             // 
@@ -151,7 +130,7 @@
             this.grid작업지시목록.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grid작업지시목록.RowTemplate.Height = 23;
             this.grid작업지시목록.RowTemplate.ReadOnly = true;
-            this.grid작업지시목록.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.grid작업지시목록.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.grid작업지시목록.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grid작업지시목록.ShowCellErrors = false;
             this.grid작업지시목록.Size = new System.Drawing.Size(866, 475);
@@ -162,19 +141,101 @@
             this.grid작업지시목록.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid작업지시목록_CellEnter);
             this.grid작업지시목록.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Grid작업지시목록_KeyDown);
             // 
-            // metroCheckBox1
+            // Column1
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.FontSize = MetroFramework.MetroCheckBoxSize.Tall;
-            this.metroCheckBox1.Location = new System.Drawing.Point(921, 201);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(123, 25);
-            this.metroCheckBox1.TabIndex = 64;
-            this.metroCheckBox1.Text = "재작업 여부";
-            this.metroCheckBox1.UseCustomBackColor = true;
-            this.metroCheckBox1.UseCustomForeColor = true;
-            this.metroCheckBox1.UseSelectable = true;
-            this.metroCheckBox1.UseStyleColors = true;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.HeaderText = "품목번호";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 127;
+            // 
+            // 순위1
+            // 
+            this.순위1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.순위1.HeaderText = "순위";
+            this.순위1.Name = "순위1";
+            this.순위1.ReadOnly = true;
+            this.순위1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.순위1.Width = 58;
+            // 
+            // 필요량
+            // 
+            this.필요량.HeaderText = "필요수량";
+            this.필요량.Name = "필요량";
+            this.필요량.ReadOnly = true;
+            this.필요량.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "1차관리";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Visible = false;
+            this.Column2.Width = 16;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "1차공정";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column11.Width = 110;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "수량";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column3.Width = 58;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "투입일";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column4.Width = 105;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "2차관리";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column5.Visible = false;
+            this.Column5.Width = 15;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "2차공정";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column12.Width = 110;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column6.HeaderText = "수량";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column6.Width = 58;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "투입일";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column7.Width = 105;
             // 
             // lbIndex
             // 
@@ -191,22 +252,6 @@
             this.lbIndex.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbIndex.UseMnemonic = false;
             // 
-            // btnWorkRestart
-            // 
-            this.btnWorkRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
-            this.btnWorkRestart.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btnWorkRestart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnWorkRestart.Highlight = true;
-            this.btnWorkRestart.Location = new System.Drawing.Point(921, 123);
-            this.btnWorkRestart.Name = "btnWorkRestart";
-            this.btnWorkRestart.Size = new System.Drawing.Size(164, 57);
-            this.btnWorkRestart.TabIndex = 61;
-            this.btnWorkRestart.Text = "재작업 시작";
-            this.btnWorkRestart.UseCustomBackColor = true;
-            this.btnWorkRestart.UseCustomForeColor = true;
-            this.btnWorkRestart.UseSelectable = true;
-            this.btnWorkRestart.UseStyleColors = true;
-            // 
             // btnWorkStart
             // 
             this.btnWorkStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
@@ -215,7 +260,7 @@
             this.btnWorkStart.Highlight = true;
             this.btnWorkStart.Location = new System.Drawing.Point(921, 49);
             this.btnWorkStart.Name = "btnWorkStart";
-            this.btnWorkStart.Size = new System.Drawing.Size(164, 59);
+            this.btnWorkStart.Size = new System.Drawing.Size(164, 71);
             this.btnWorkStart.TabIndex = 59;
             this.btnWorkStart.Text = "작업 시작(&s)";
             this.btnWorkStart.UseCustomBackColor = true;
@@ -223,22 +268,6 @@
             this.btnWorkStart.UseSelectable = true;
             this.btnWorkStart.UseStyleColors = true;
             this.btnWorkStart.Click += new System.EventHandler(this.BtnWorkStart_Click);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(136)))), ((int)(((byte)(161)))));
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.metroButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.metroButton1.Highlight = true;
-            this.metroButton1.Location = new System.Drawing.Point(7, 518);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(97, 30);
-            this.metroButton1.TabIndex = 63;
-            this.metroButton1.Text = "도면 보기";
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseCustomForeColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.UseStyleColors = true;
             // 
             // lbl전체페이지
             // 
@@ -267,9 +296,9 @@
             // 
             this.lbl관리번호.BackColor = System.Drawing.SystemColors.Control;
             this.lbl관리번호.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl관리번호.Location = new System.Drawing.Point(378, 518);
+            this.lbl관리번호.Location = new System.Drawing.Point(322, 518);
             this.lbl관리번호.Name = "lbl관리번호";
-            this.lbl관리번호.Size = new System.Drawing.Size(150, 30);
+            this.lbl관리번호.Size = new System.Drawing.Size(206, 30);
             this.lbl관리번호.TabIndex = 55;
             this.lbl관리번호.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -279,7 +308,7 @@
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("함초롬돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label10.Location = new System.Drawing.Point(308, 518);
+            this.label10.Location = new System.Drawing.Point(252, 518);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 30);
             this.label10.TabIndex = 54;
@@ -290,9 +319,9 @@
             // 
             this.lbl투입일자.BackColor = System.Drawing.SystemColors.Control;
             this.lbl투입일자.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl투입일자.Location = new System.Drawing.Point(212, 518);
+            this.lbl투입일자.Location = new System.Drawing.Point(98, 517);
             this.lbl투입일자.Name = "lbl투입일자";
-            this.lbl투입일자.Size = new System.Drawing.Size(90, 30);
+            this.lbl투입일자.Size = new System.Drawing.Size(148, 30);
             this.lbl투입일자.TabIndex = 53;
             this.lbl투입일자.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -302,22 +331,12 @@
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("함초롬돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label8.Location = new System.Drawing.Point(122, 518);
+            this.label8.Location = new System.Drawing.Point(8, 517);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 30);
             this.label8.TabIndex = 52;
             this.label8.Text = "투입일자";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(875, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
             // 
             // btnGridPageUp
             // 
@@ -397,102 +416,6 @@
             this.label2.Text = "/";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Column1
-            // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.HeaderText = "품목번호";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 127;
-            // 
-            // 순위1
-            // 
-            this.순위1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.순위1.HeaderText = "순위";
-            this.순위1.Name = "순위1";
-            this.순위1.ReadOnly = true;
-            this.순위1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.순위1.Width = 56;
-            // 
-            // 필요량
-            // 
-            this.필요량.HeaderText = "필요수량";
-            this.필요량.Name = "필요량";
-            this.필요량.ReadOnly = true;
-            this.필요량.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "1차관리";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column2.Visible = false;
-            this.Column2.Width = 16;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "1차공정";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column11.Width = 110;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.HeaderText = "수량";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column3.Width = 56;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "투입일";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column4.Width = 105;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "2차관리";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column5.Visible = false;
-            this.Column5.Width = 15;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "2차공정";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column12.Width = 110;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column6.HeaderText = "수량";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column6.Width = 56;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "투입일";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column7.Width = 105;
-            // 
             // WorkSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -503,45 +426,32 @@
             this.Controls.Add(this.lbl현재페이지);
             this.Controls.Add(this.btngridListDown);
             this.Controls.Add(this.btnGridPageUp);
-            this.Controls.Add(this.metroCheckBox2);
             this.Controls.Add(this.grid작업지시목록);
-            this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.lbIndex);
-            this.Controls.Add(this.btnWorkRestart);
             this.Controls.Add(this.btnWorkStart);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.lbl전체페이지);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lbl관리번호);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl투입일자);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "WorkSelect";
             this.Size = new System.Drawing.Size(1100, 551);
             this.Load += new System.EventHandler(this.WorkSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid작업지시목록)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private System.Windows.Forms.Label lbIndex;
-        private MetroFramework.Controls.MetroButton btnWorkRestart;
         private MetroFramework.Controls.MetroButton btnWorkStart;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Label lbl전체페이지;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbl관리번호;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbl투입일자;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
        // private System.Windows.Forms.DataGridViewTextBoxColumn 품목번호DataGridViewTextBoxColumn;
         private MetroFramework.Controls.MetroButton btnGridPageUp;
         private MetroFramework.Controls.MetroButton btngridListDown;
@@ -551,7 +461,6 @@
         private System.Windows.Forms.Label lbl비고;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroGrid grid작업지시목록;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 순위1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 필요량;
@@ -563,5 +472,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        public MetroFramework.Controls.MetroGrid grid작업지시목록;
     }
 }

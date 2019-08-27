@@ -22,5 +22,7 @@ namespace ClassLibrary
         public Nullable<bool> 완료유무 { get; set; }
         public Nullable<System.DateTime> 공정별완료시간 { get; set; }
         public Nullable<System.DateTime> 작업완료시간 { get; set; }
+    
+        public virtual MES현장실적현황 MES현장실적현황 { get; set; }
     }
 }

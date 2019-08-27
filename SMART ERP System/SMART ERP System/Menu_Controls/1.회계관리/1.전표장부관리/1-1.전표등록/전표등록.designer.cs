@@ -353,6 +353,7 @@
             this.dgv전표리스트.Size = new System.Drawing.Size(1025, 247);
             this.dgv전표리스트.TabIndex = 100;
             this.dgv전표리스트.TabStop = false;
+            this.dgv전표리스트.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.Dgv전표리스트_CellBeginEdit);
             this.dgv전표리스트.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표리스트_CellEndEdit);
             this.dgv전표리스트.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv전표리스트_CellEnter);
             this.dgv전표리스트.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Dgv전표리스트_DataError);

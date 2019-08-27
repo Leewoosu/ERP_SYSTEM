@@ -5,16 +5,18 @@
       <PropertyRef Name="관리번호" />
     </Key>
     <Property Name="관리번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="제품번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="절단지시수량" Type="Int32" />
-    <Property Name="벤딩지시수량" Type="Int32" />
-    <Property Name="드릴지시수량" Type="Int32" />
-    <Property Name="용접지시수량" Type="Int32" />
-    <Property Name="절단불량수량" Type="Int32" />
-    <Property Name="벤딩불량수량" Type="Int32" />
-    <Property Name="드릴불량수량" Type="Int32" />
-    <Property Name="용접불량수량" Type="Int32" />
+    <Property Name="제품번호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="절단생산수량" Type="Int32" Nullable="false" />
+    <Property Name="벤딩생산수량" Type="Int32" Nullable="false" />
+    <Property Name="드릴생산수량" Type="Int32" Nullable="false" />
+    <Property Name="용접생산수량" Type="Int32" Nullable="false" />
+    <Property Name="절단불량수량" Type="Int32" Nullable="false" />
+    <Property Name="벤딩불량수량" Type="Int32" Nullable="false" />
+    <Property Name="드릴불량수량" Type="Int32" Nullable="false" />
+    <Property Name="용접불량수량" Type="Int32" Nullable="false" />
     <Property Name="실적시간" Type="DateTime" Precision="3" />
+    <Property Name="완료유무" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="MES투입현황" Relationship="Self.FK_MES공정별수량_MES투입현황" FromRole="MES공정별수량" ToRole="MES투입현황" />
   </EntityType>
   <EntityType Name="MES불량실적현황">
     <Key>
@@ -40,6 +42,7 @@
     <Property Name="완료유무" Type="Boolean" />
     <Property Name="공정별완료시간" Type="DateTime" Precision="3" />
     <Property Name="작업완료시간" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MES현장실적현황" Relationship="Self.FK_MES상세실적현황_MES현장실적현황" FromRole="MES상세실적현황" ToRole="MES현장실적현황" />
   </EntityType>
   <EntityType Name="MES투입현황">
     <Key>
@@ -50,8 +53,8 @@
     <Property Name="자재불출" Type="Boolean" Nullable="false" />
     <Property Name="투입수량" Type="Int32" Nullable="false" />
     <Property Name="투입일" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="작업순위" Type="Int32" />
     <Property Name="공정" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MES공정별수량" Relationship="Self.FK_MES공정별수량_MES투입현황" FromRole="MES투입현황" ToRole="MES공정별수량" />
     <NavigationProperty Name="MES현장실적현황" Relationship="Self.FK_현장실적현황_투입현황1" FromRole="MES투입현황" ToRole="MES현장실적현황" />
   </EntityType>
   <EntityType Name="MES현장실적현황">
@@ -71,6 +74,7 @@
     <Property Name="실적등록시간" Type="DateTime" Precision="3" />
     <Property Name="완료유무" Type="Boolean" />
     <NavigationProperty Name="MES불량실적현황" Relationship="Self.FK_MES불량실적현황_MES현장실적현황" FromRole="MES현장실적현황" ToRole="MES불량실적현황" />
+    <NavigationProperty Name="MES상세실적현황" Relationship="Self.FK_MES상세실적현황_MES현장실적현황" FromRole="MES현장실적현황" ToRole="MES상세실적현황" />
     <NavigationProperty Name="MES투입현황" Relationship="Self.FK_현장실적현황_투입현황1" FromRole="MES현장실적현황" ToRole="MES투입현황" />
   </EntityType>
   <EntityType Name="거래처">
@@ -577,10 +581,10 @@
       <PropertyRef Name="사업장코드" />
     </Key>
     <Property Name="사업장코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="사업장명" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="사업장등록번호" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="사업장명" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="사업장등록번호" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="대표자명" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="사업장주소" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="사업장주소" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사업장번지" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="사업장전화번호" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="업태" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
@@ -610,7 +614,7 @@
     <Property Name="부서코드" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="입사일" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="퇴사일" Type="DateTime" Precision="3" />
-    <Property Name="사용자여부" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="사용자여부" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="조회권한" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="비상연락망" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="암호" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -905,6 +909,7 @@
     <Property Name="품목군" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="검사여부" Type="Boolean" Nullable="false" />
     <Property Name="단위" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="관리단위" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="공급자재리스트" Relationship="Self.FK_공급자재리스트_자재" FromRole="자재" ToRole="공급자재리스트" />
     <NavigationProperty Name="발주리스트" Relationship="Self.FK_발주리스트_자재" FromRole="자재" ToRole="발주리스트" />
     <NavigationProperty Name="자재명세서" Relationship="Self.FK_자재명세서_자재1" FromRole="자재" ToRole="자재명세서" />
@@ -1068,7 +1073,7 @@
     <Property Name="층" Type="Int32" Nullable="false" />
     <Property Name="리드타임" Type="Int32" Nullable="false" />
     <Property Name="LOT수량" Type="Int32" Nullable="false" />
-    <Property Name="검사여부" Type="Boolean" />
+    <Property Name="검사여부" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="공정순서" Relationship="Self.FK_공정순서_제품" FromRole="제품" ToRole="공정순서" />
     <NavigationProperty Name="생산계획현황" Relationship="Self.FK_생산계획현황_제품" FromRole="제품" ToRole="생산계획현황" />
     <NavigationProperty Name="수주" Relationship="Self.FK_수주_제품" FromRole="제품" ToRole="수주" />
@@ -1208,6 +1213,18 @@
     <Property Name="제목" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="내용" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
+  <Association Name="FK_MES공정별수량_MES투입현황">
+    <End Role="MES투입현황" Type="Self.MES투입현황" Multiplicity="1" />
+    <End Role="MES공정별수량" Type="Self.MES공정별수량" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MES투입현황">
+        <PropertyRef Name="관리번호" />
+      </Principal>
+      <Dependent Role="MES공정별수량">
+        <PropertyRef Name="관리번호" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_MES불량실적현황_MES현장실적현황">
     <End Role="MES현장실적현황" Type="Self.MES현장실적현황" Multiplicity="1" />
     <End Role="MES불량실적현황" Type="Self.MES불량실적현황" Multiplicity="0..1" />
@@ -1216,6 +1233,18 @@
         <PropertyRef Name="실적번호" />
       </Principal>
       <Dependent Role="MES불량실적현황">
+        <PropertyRef Name="실적번호" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MES상세실적현황_MES현장실적현황">
+    <End Role="MES현장실적현황" Type="Self.MES현장실적현황" Multiplicity="1" />
+    <End Role="MES상세실적현황" Type="Self.MES상세실적현황" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MES현장실적현황">
+        <PropertyRef Name="실적번호" />
+      </Principal>
+      <Dependent Role="MES상세실적현황">
         <PropertyRef Name="실적번호" />
       </Dependent>
     </ReferentialConstraint>
@@ -2004,9 +2033,17 @@
     <EntitySet Name="회사등록" EntityType="Self.회사등록" />
     <EntitySet Name="고정자산계정과목" EntityType="Self.고정자산계정과목" />
     <EntitySet Name="공지사항" EntityType="Self.공지사항" />
+    <AssociationSet Name="FK_MES공정별수량_MES투입현황" Association="Self.FK_MES공정별수량_MES투입현황">
+      <End Role="MES투입현황" EntitySet="MES투입현황" />
+      <End Role="MES공정별수량" EntitySet="MES공정별수량" />
+    </AssociationSet>
     <AssociationSet Name="FK_MES불량실적현황_MES현장실적현황" Association="Self.FK_MES불량실적현황_MES현장실적현황">
       <End Role="MES현장실적현황" EntitySet="MES현장실적현황" />
       <End Role="MES불량실적현황" EntitySet="MES불량실적현황" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MES상세실적현황_MES현장실적현황" Association="Self.FK_MES상세실적현황_MES현장실적현황">
+      <End Role="MES현장실적현황" EntitySet="MES현장실적현황" />
+      <End Role="MES상세실적현황" EntitySet="MES상세실적현황" />
     </AssociationSet>
     <AssociationSet Name="FK_현장실적현황_투입현황1" Association="Self.FK_현장실적현황_투입현황1">
       <End Role="MES투입현황" EntitySet="MES투입현황" />

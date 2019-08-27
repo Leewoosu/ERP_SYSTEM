@@ -84,7 +84,7 @@
             // 
             this.lbl라인.BackColor = System.Drawing.SystemColors.Control;
             this.lbl라인.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl라인.Location = new System.Drawing.Point(560, 16);
+            this.lbl라인.Location = new System.Drawing.Point(556, 23);
             this.lbl라인.Name = "lbl라인";
             this.lbl라인.Size = new System.Drawing.Size(102, 22);
             this.lbl라인.TabIndex = 40;
@@ -104,7 +104,7 @@
             // 
             this.lbl타이머.BackColor = System.Drawing.SystemColors.Control;
             this.lbl타이머.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl타이머.Location = new System.Drawing.Point(668, 16);
+            this.lbl타이머.Location = new System.Drawing.Point(690, 23);
             this.lbl타이머.Name = "lbl타이머";
             this.lbl타이머.Size = new System.Drawing.Size(161, 22);
             this.lbl타이머.TabIndex = 36;
@@ -123,7 +123,7 @@
             // 
             this.lbl작업자.BackColor = System.Drawing.SystemColors.Control;
             this.lbl작업자.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl작업자.Location = new System.Drawing.Point(191, 26);
+            this.lbl작업자.Location = new System.Drawing.Point(192, 23);
             this.lbl작업자.Name = "lbl작업자";
             this.lbl작업자.Size = new System.Drawing.Size(84, 22);
             this.lbl작업자.TabIndex = 30;
@@ -134,7 +134,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("함초롬돋움", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(110, 26);
+            this.label4.Location = new System.Drawing.Point(111, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 22);
             this.label4.TabIndex = 29;
@@ -236,11 +236,11 @@
             this.btn상세실적조회.Cursor = System.Windows.Forms.Cursors.Default;
             this.btn상세실적조회.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btn상세실적조회.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn상세실적조회.Location = new System.Drawing.Point(481, 63);
+            this.btn상세실적조회.Location = new System.Drawing.Point(358, 63);
             this.btn상세실적조회.Name = "btn상세실적조회";
             this.btn상세실적조회.Size = new System.Drawing.Size(115, 42);
             this.btn상세실적조회.TabIndex = 15;
-            this.btn상세실적조회.Text = "상세실적조회";
+            this.btn상세실적조회.Text = "생산실적조회";
             this.btn상세실적조회.UseCustomBackColor = true;
             this.btn상세실적조회.UseCustomForeColor = true;
             this.btn상세실적조회.UseSelectable = true;
@@ -255,11 +255,11 @@
             this.btn생산실적조회.Cursor = System.Windows.Forms.Cursors.Default;
             this.btn생산실적조회.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btn생산실적조회.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn생산실적조회.Location = new System.Drawing.Point(359, 63);
+            this.btn생산실적조회.Location = new System.Drawing.Point(482, 63);
             this.btn생산실적조회.Name = "btn생산실적조회";
             this.btn생산실적조회.Size = new System.Drawing.Size(115, 42);
             this.btn생산실적조회.TabIndex = 14;
-            this.btn생산실적조회.Text = "생산실적조회";
+            this.btn생산실적조회.Text = "상세실적조회";
             this.btn생산실적조회.UseCustomBackColor = true;
             this.btn생산실적조회.UseCustomForeColor = true;
             this.btn생산실적조회.UseSelectable = true;
@@ -346,7 +346,7 @@
             // 
             // lblMinus
             // 
-            this.lblMinus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblMinus.BackColor = System.Drawing.SystemColors.Control;
             this.lblMinus.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblMinus.Image = global::MES.Properties.Resources.substract_16;
             this.lblMinus.Location = new System.Drawing.Point(1048, 709);
@@ -357,7 +357,7 @@
             // 
             // lblPlus
             // 
-            this.lblPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblPlus.BackColor = System.Drawing.SystemColors.Control;
             this.lblPlus.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPlus.Image = global::MES.Properties.Resources.add_16;
             this.lblPlus.Location = new System.Drawing.Point(1048, 668);
@@ -400,7 +400,6 @@
         private System.Windows.Forms.Label lblPlus;
         private System.Windows.Forms.Label lbl타이머;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbl작업자;
         private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroButton btn공지사항;
         private MetroFramework.Controls.MetroButton btn계획대실적;
@@ -416,6 +415,7 @@
         private System.Windows.Forms.Label lbl라인;
         private MetroFramework.Controls.MetroButton btn자주검사조회;
         public System.Windows.Forms.Label lblClose;
+        public System.Windows.Forms.Label lbl작업자;
     }
 }
 

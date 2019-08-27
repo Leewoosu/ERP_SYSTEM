@@ -25,7 +25,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -79,6 +79,21 @@
   <ItemGroup>
     <Compile Include="Data\MES공정별수량Data.cs" />
     <Compile Include="Data\사원등록Data.cs" />
+    <Compile Include="ERP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERP.edmx</DependentUpon>
+    </Compile>
     <Compile Include="FormHelper\FormHelper.cs" />
     <Compile Include="IsNullOrEmpty.cs" />
     <Compile Include="LoginForm.cs">
@@ -94,196 +109,181 @@
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MES공정별수량.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="MES불량실적현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="MES상세실적현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="MES투입현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="MES현장실적현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="거래처.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="검사유형.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="결산자료.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="결산자료리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="결산자료입력.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="계정과목.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="계정과목그룹.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="계정과목등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="고정자산.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="고정자산계정과목.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="공급자재리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="공정.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="공정순서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="공제별세부사항.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="공지사항.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="과세별세액.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="관할세무서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="근로소득별세부사항.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="근태결과.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="금융거래처등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="금융기관.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="급_상여지급_급여구분.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="급_상여지급_일자등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="급_상여지급_직종및_급여형태.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="급여.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="급여계산.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="급여형태.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="기간비용.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="기간비용계산방법.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="납품업체.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="메뉴등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="메뉴별권한설정.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="반품처리리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="반품처리서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="발주리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="발주서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="부가세신고서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="부문등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="부서등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="분기별예산.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="불량상세정보.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="불량코드내역.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="사업장등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="사용자권한설정.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="사원등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="사원상세정보.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="생산검사.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="생산계획현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="생산실적현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="세금.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="세무유형.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="소득_세액공제환경설정.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="손익계산서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="수주.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="수주현황.cs" />
     <Compile Include="Data\MES불량실적현황Data.cs" />
@@ -384,107 +384,107 @@
       <DependentUpon>WorkStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="시스템환경설정.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="업무용승용차_차량등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="역추적.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="예금종류.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="예산.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="원가보고서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="일반거래처등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="입고등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="입고등록리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="자금계획달력.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="자금과목.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="자재.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="자재명세서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="자재상세전표.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="자재전표.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="작업완료지시.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="작업완료확인서.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="작업지시.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="작업지시리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="작업지시선택Data.cs" />
     <Compile Include="작업지시현황.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="재무상태표.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="전표.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="전표리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="제품.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="퇴직공제항목.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="퇴직금.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="퇴직기준설정.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="퇴직지급항목.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="품목정보.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="프로젝트등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="합계잔액시산표.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="합계잔액시산표리스트.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="회계처리.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <Compile Include="회사등록.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ERP.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -533,12 +533,12 @@
     <EmbeddedResource Include="WorkStatus.resx">
       <DependentUpon>WorkStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model.edmx">
+    <EntityDeploy Include="ERP.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>ERP.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <None Include="ERP.edmx.diagram">
+      <DependentUpon>ERP.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\투입현황1.datasource" />
@@ -574,17 +574,17 @@
     <None Include="Resources\add_16.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ERP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ERP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ERP.edmx</DependentUpon>
+      <LastGenOutput>ERP.cs</LastGenOutput>
+    </Content>
     <Content Include="factory_32 ico.ico" />
-    <Content Include="Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\iconfinder_user-id_285641.png" />
     <None Include="Resources\iconfinder_user-id_285641 %281%29.png" />
     <None Include="Resources\24014_14797_2656.jpg" />

@@ -28,6 +28,7 @@ namespace ClassLibrary
         public Nullable<bool> 완료유무 { get; set; }
     
         public virtual MES불량실적현황 MES불량실적현황 { get; set; }
+        public virtual MES상세실적현황 MES상세실적현황 { get; set; }
         public virtual MES투입현황 MES투입현황 { get; set; }
     }
 }

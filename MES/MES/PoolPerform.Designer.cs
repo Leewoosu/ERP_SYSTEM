@@ -33,6 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.grid불량실적조회 = new MetroFramework.Controls.MetroGrid();
+            this.관리번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.불량수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.공정명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.작업자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.등록시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn조회 = new MetroFramework.Controls.MetroButton();
             this.tbx사원번호 = new MetroFramework.Controls.MetroTextBox();
             this.tbx관리번호 = new MetroFramework.Controls.MetroTextBox();
@@ -41,18 +48,11 @@
             this.lblManageNum = new System.Windows.Forms.Label();
             this.lblPerformDate = new System.Windows.Forms.Label();
             this.lblProductionNum = new System.Windows.Forms.Label();
-            this.lbl공정 = new System.Windows.Forms.Label();
             this.lblShop = new System.Windows.Forms.Label();
             this.lblTilde2 = new System.Windows.Forms.Label();
             this.dtFirst = new System.Windows.Forms.DateTimePicker();
             this.dtLast = new System.Windows.Forms.DateTimePicker();
-            this.관리번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.불량수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.공정명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.등록시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbb공정 = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid불량실적조회)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +123,41 @@
             this.grid불량실적조회.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid불량실적조회.Size = new System.Drawing.Size(1094, 413);
             this.grid불량실적조회.TabIndex = 105;
+            // 
+            // 관리번호
+            // 
+            this.관리번호.HeaderText = "관리번호";
+            this.관리번호.Name = "관리번호";
+            // 
+            // 품목번호
+            // 
+            this.품목번호.HeaderText = "품목번호";
+            this.품목번호.Name = "품목번호";
+            // 
+            // 불량수량
+            // 
+            this.불량수량.HeaderText = "불량수량";
+            this.불량수량.Name = "불량수량";
+            // 
+            // 공정명
+            // 
+            this.공정명.HeaderText = "공정명";
+            this.공정명.Name = "공정명";
+            // 
+            // 작업자
+            // 
+            this.작업자.HeaderText = "작업자";
+            this.작업자.Name = "작업자";
+            // 
+            // 등록시간
+            // 
+            this.등록시간.HeaderText = "등록시간";
+            this.등록시간.Name = "등록시간";
+            // 
+            // 비고
+            // 
+            this.비고.HeaderText = "비고";
+            this.비고.Name = "비고";
             // 
             // btn조회
             // 
@@ -282,17 +317,6 @@
             this.lblProductionNum.Text = "품번";
             this.lblProductionNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl공정
-            // 
-            this.lbl공정.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl공정.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl공정.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbl공정.Location = new System.Drawing.Point(110, 28);
-            this.lbl공정.Name = "lbl공정";
-            this.lbl공정.Size = new System.Drawing.Size(229, 32);
-            this.lbl공정.TabIndex = 85;
-            this.lbl공정.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblShop
             // 
             this.lblShop.BackColor = System.Drawing.Color.Gray;
@@ -329,46 +353,28 @@
             this.dtLast.Size = new System.Drawing.Size(200, 21);
             this.dtLast.TabIndex = 110;
             // 
-            // 관리번호
+            // cbb공정
             // 
-            this.관리번호.HeaderText = "관리번호";
-            this.관리번호.Name = "관리번호";
-            // 
-            // 품목번호
-            // 
-            this.품목번호.HeaderText = "품목번호";
-            this.품목번호.Name = "품목번호";
-            // 
-            // 불량수량
-            // 
-            this.불량수량.HeaderText = "불량수량";
-            this.불량수량.Name = "불량수량";
-            // 
-            // 공정명
-            // 
-            this.공정명.HeaderText = "공정명";
-            this.공정명.Name = "공정명";
-            // 
-            // 작업자
-            // 
-            this.작업자.HeaderText = "작업자";
-            this.작업자.Name = "작업자";
-            // 
-            // 등록시간
-            // 
-            this.등록시간.HeaderText = "등록시간";
-            this.등록시간.Name = "등록시간";
-            // 
-            // 비고
-            // 
-            this.비고.HeaderText = "비고";
-            this.비고.Name = "비고";
+            this.cbb공정.FormattingEnabled = true;
+            this.cbb공정.ItemHeight = 23;
+            this.cbb공정.Items.AddRange(new object[] {
+            " ",
+            "절단",
+            "벤딩",
+            "드릴",
+            "용접"});
+            this.cbb공정.Location = new System.Drawing.Point(110, 34);
+            this.cbb공정.Name = "cbb공정";
+            this.cbb공정.Size = new System.Drawing.Size(172, 29);
+            this.cbb공정.TabIndex = 111;
+            this.cbb공정.UseSelectable = true;
             // 
             // PoolPerform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.cbb공정);
             this.Controls.Add(this.dtLast);
             this.Controls.Add(this.dtFirst);
             this.Controls.Add(this.grid불량실적조회);
@@ -381,7 +387,6 @@
             this.Controls.Add(this.lblManageNum);
             this.Controls.Add(this.lblPerformDate);
             this.Controls.Add(this.lblProductionNum);
-            this.Controls.Add(this.lbl공정);
             this.Controls.Add(this.lblShop);
             this.Controls.Add(this.label1);
             this.Name = "PoolPerform";
@@ -403,7 +408,6 @@
         private System.Windows.Forms.Label lblManageNum;
         private System.Windows.Forms.Label lblPerformDate;
         private System.Windows.Forms.Label lblProductionNum;
-        private System.Windows.Forms.Label lbl공정;
         private System.Windows.Forms.Label lblShop;
         private System.Windows.Forms.Label lblTilde2;
         private System.Windows.Forms.DateTimePicker dtFirst;
@@ -415,5 +419,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업자;
         private System.Windows.Forms.DataGridViewTextBoxColumn 등록시간;
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고;
+        private MetroFramework.Controls.MetroComboBox cbb공정;
     }
 }

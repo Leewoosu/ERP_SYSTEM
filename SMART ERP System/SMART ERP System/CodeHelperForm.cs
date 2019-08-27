@@ -23,6 +23,7 @@ namespace SMART_ERP_System
         private 사업장구분Control 사업장구분Control;
         private 관할세무서구분Control 관할세무서구분Control;
         private 고정자산구분Control 고정자산구분Control;
+        private 제품번호구분Control 제품번호구분Control;
 
         public CodeHelperForm()
         {
@@ -39,6 +40,19 @@ namespace SMART_ERP_System
             this.Resizable = false;
             ActiveControl = 계정코드구분Control.dgv계정과목List;
             계정코드구분Control.RecieveLoginForm(this);
+            this.SetFormLocation();
+        }
+
+        public CodeHelperForm(제품번호구분Control 제품번호구분Control)
+        {
+            InitializeComponent();
+            this.제품번호구분Control = 제품번호구분Control;
+
+            this.panel.Controls.Add(제품번호구분Control);
+            제품번호구분Control.Dock = DockStyle.Fill;
+            this.Resizable = false;
+            ActiveControl = 제품번호구분Control.dgv제품번호List;
+            제품번호구분Control.RecieveLoginForm(this);
             this.SetFormLocation();
         }
 

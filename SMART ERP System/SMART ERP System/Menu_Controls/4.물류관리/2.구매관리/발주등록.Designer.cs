@@ -95,10 +95,11 @@
             // cbb사원코드
             // 
             this.cbb사원코드.DataSource = this.사원등록BindingSource;
+            this.cbb사원코드.Font = new System.Drawing.Font("굴림", 9F);
             this.cbb사원코드.FormattingEnabled = true;
             this.cbb사원코드.Location = new System.Drawing.Point(367, 16);
             this.cbb사원코드.Name = "cbb사원코드";
-            this.cbb사원코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb사원코드.Size = new System.Drawing.Size(65, 20);
             this.cbb사원코드.TabIndex = 71;
             this.cbb사원코드.SelectedValueChanged += new System.EventHandler(this.Cbb사원코드_SelectedValueChanged);
             // 
@@ -109,10 +110,11 @@
             // cbb부서코드
             // 
             this.cbb부서코드.DataSource = this.부서등록BindingSource;
+            this.cbb부서코드.Font = new System.Drawing.Font("굴림", 9F);
             this.cbb부서코드.FormattingEnabled = true;
             this.cbb부서코드.Location = new System.Drawing.Point(93, 17);
             this.cbb부서코드.Name = "cbb부서코드";
-            this.cbb부서코드.Size = new System.Drawing.Size(65, 19);
+            this.cbb부서코드.Size = new System.Drawing.Size(65, 20);
             this.cbb부서코드.TabIndex = 70;
             this.cbb부서코드.SelectedValueChanged += new System.EventHandler(this.Cbb부서코드_SelectedValueChanged);
             // 
@@ -123,19 +125,21 @@
             // DeliveryLastDate
             // 
             this.DeliveryLastDate.CustomFormat = "yyyy-MM-dd";
+            this.DeliveryLastDate.Font = new System.Drawing.Font("굴림", 9F);
             this.DeliveryLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DeliveryLastDate.Location = new System.Drawing.Point(868, 47);
+            this.DeliveryLastDate.Location = new System.Drawing.Point(859, 50);
             this.DeliveryLastDate.Name = "DeliveryLastDate";
-            this.DeliveryLastDate.Size = new System.Drawing.Size(99, 20);
+            this.DeliveryLastDate.Size = new System.Drawing.Size(99, 21);
             this.DeliveryLastDate.TabIndex = 69;
             // 
             // DeliveryFirstDate
             // 
             this.DeliveryFirstDate.CustomFormat = "yyyy-MM-dd";
+            this.DeliveryFirstDate.Font = new System.Drawing.Font("굴림", 9F);
             this.DeliveryFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DeliveryFirstDate.Location = new System.Drawing.Point(719, 47);
+            this.DeliveryFirstDate.Location = new System.Drawing.Point(719, 49);
             this.DeliveryFirstDate.Name = "DeliveryFirstDate";
-            this.DeliveryFirstDate.Size = new System.Drawing.Size(103, 20);
+            this.DeliveryFirstDate.Size = new System.Drawing.Size(103, 21);
             this.DeliveryFirstDate.TabIndex = 68;
             // 
             // label4
@@ -151,7 +155,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(840, 53);
+            this.label7.Location = new System.Drawing.Point(835, 53);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(11, 11);
             this.label7.TabIndex = 66;
@@ -160,40 +164,46 @@
             // OrderLastDate
             // 
             this.OrderLastDate.CustomFormat = "yyyy-MM-dd";
+            this.OrderLastDate.Font = new System.Drawing.Font("굴림", 9F);
             this.OrderLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.OrderLastDate.Location = new System.Drawing.Point(515, 46);
+            this.OrderLastDate.Location = new System.Drawing.Point(510, 48);
             this.OrderLastDate.Name = "OrderLastDate";
-            this.OrderLastDate.Size = new System.Drawing.Size(99, 20);
+            this.OrderLastDate.Size = new System.Drawing.Size(99, 21);
             this.OrderLastDate.TabIndex = 65;
             // 
             // OrderFirstDate
             // 
+            this.OrderFirstDate.CalendarFont = new System.Drawing.Font("굴림", 9F);
             this.OrderFirstDate.CustomFormat = "yyyy-MM-dd";
+            this.OrderFirstDate.Font = new System.Drawing.Font("굴림", 9F);
             this.OrderFirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.OrderFirstDate.Location = new System.Drawing.Point(366, 46);
+            this.OrderFirstDate.Location = new System.Drawing.Point(366, 48);
             this.OrderFirstDate.Name = "OrderFirstDate";
-            this.OrderFirstDate.Size = new System.Drawing.Size(103, 20);
+            this.OrderFirstDate.Size = new System.Drawing.Size(103, 21);
             this.OrderFirstDate.TabIndex = 64;
             // 
             // txb사원명
             // 
+            this.txb사원명.Font = new System.Drawing.Font("굴림", 9F);
             this.txb사원명.Location = new System.Drawing.Point(438, 17);
             this.txb사원명.Name = "txb사원명";
-            this.txb사원명.Size = new System.Drawing.Size(108, 20);
+            this.txb사원명.Size = new System.Drawing.Size(108, 21);
             this.txb사원명.TabIndex = 63;
             // 
             // txb거래처이름
             // 
+            this.txb거래처이름.Font = new System.Drawing.Font("굴림", 9F);
             this.txb거래처이름.Location = new System.Drawing.Point(92, 46);
             this.txb거래처이름.Name = "txb거래처이름";
-            this.txb거래처이름.Size = new System.Drawing.Size(179, 20);
+            this.txb거래처이름.Size = new System.Drawing.Size(179, 21);
             this.txb거래처이름.TabIndex = 57;
             // 
             // txb부서명
             // 
+            this.txb부서명.Font = new System.Drawing.Font("굴림", 9F);
             this.txb부서명.Location = new System.Drawing.Point(164, 17);
             this.txb부서명.Name = "txb부서명";
-            this.txb부서명.Size = new System.Drawing.Size(108, 20);
+            this.txb부서명.Size = new System.Drawing.Size(108, 21);
             this.txb부서명.TabIndex = 55;
             // 
             // label15
@@ -219,7 +229,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(487, 52);
+            this.label3.Location = new System.Drawing.Point(485, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 11);
             this.label3.TabIndex = 27;

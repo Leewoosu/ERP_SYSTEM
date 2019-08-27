@@ -202,17 +202,19 @@
             // 
             // textBox22
             // 
-            this.textBox22.Location = new System.Drawing.Point(379, 96);
+            this.textBox22.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox22.Location = new System.Drawing.Point(405, 96);
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(167, 20);
+            this.textBox22.Size = new System.Drawing.Size(167, 21);
             this.textBox22.TabIndex = 75;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("굴림", 9F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(298, 97);
+            this.comboBox1.Location = new System.Drawing.Point(312, 97);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 19);
+            this.comboBox1.Size = new System.Drawing.Size(87, 20);
             this.comboBox1.TabIndex = 74;
             this.comboBox1.Text = "0.입고번호";
             // 
@@ -220,17 +222,18 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(609, 74);
+            this.label13.Location = new System.Drawing.Point(617, 74);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 14);
             this.label13.TabIndex = 73;
             this.label13.Text = "프로젝트";
+            this.label13.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(620, 50);
+            this.label4.Location = new System.Drawing.Point(628, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 14);
             this.label4.TabIndex = 72;
@@ -238,132 +241,151 @@
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(682, 70);
+            this.textBox15.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox15.Location = new System.Drawing.Point(690, 70);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(66, 20);
+            this.textBox15.Size = new System.Drawing.Size(66, 21);
             this.textBox15.TabIndex = 70;
+            this.textBox15.Visible = false;
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(754, 70);
+            this.textBox21.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox21.Location = new System.Drawing.Point(762, 70);
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(108, 20);
+            this.textBox21.Size = new System.Drawing.Size(108, 21);
             this.textBox21.TabIndex = 71;
+            this.textBox21.Visible = false;
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(92, 70);
+            this.textBox20.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox20.Location = new System.Drawing.Point(105, 70);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(180, 20);
+            this.textBox20.Size = new System.Drawing.Size(180, 21);
             this.textBox20.TabIndex = 69;
             // 
             // comboBox4
             // 
+            this.comboBox4.Font = new System.Drawing.Font("굴림", 9F);
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(13, 71);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(75, 19);
+            this.comboBox4.Size = new System.Drawing.Size(86, 20);
             this.comboBox4.TabIndex = 68;
             this.comboBox4.Text = "0.품번";
             // 
             // comboBox3
             // 
+            this.comboBox3.Font = new System.Drawing.Font("굴림", 9F);
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(13, 47);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(75, 19);
+            this.comboBox3.Size = new System.Drawing.Size(86, 20);
             this.comboBox3.TabIndex = 67;
             this.comboBox3.Text = "2.실적담당";
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(682, 47);
+            this.textBox13.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox13.Location = new System.Drawing.Point(690, 47);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(66, 20);
+            this.textBox13.Size = new System.Drawing.Size(66, 21);
             this.textBox13.TabIndex = 64;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(754, 47);
+            this.textBox14.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox14.Location = new System.Drawing.Point(762, 47);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(108, 20);
+            this.textBox14.Size = new System.Drawing.Size(108, 21);
             this.textBox14.TabIndex = 65;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(682, 23);
+            this.textBox1.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox1.Location = new System.Drawing.Point(690, 23);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(66, 20);
+            this.textBox1.Size = new System.Drawing.Size(66, 21);
             this.textBox1.TabIndex = 62;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(754, 23);
+            this.textBox4.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox4.Location = new System.Drawing.Point(762, 23);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(108, 20);
+            this.textBox4.Size = new System.Drawing.Size(108, 21);
             this.textBox4.TabIndex = 63;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(378, 71);
+            this.textBox11.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox11.Location = new System.Drawing.Point(404, 71);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(66, 20);
+            this.textBox11.Size = new System.Drawing.Size(66, 21);
             this.textBox11.TabIndex = 58;
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(450, 71);
+            this.textBox12.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox12.Location = new System.Drawing.Point(476, 71);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(108, 20);
+            this.textBox12.Size = new System.Drawing.Size(108, 21);
             this.textBox12.TabIndex = 59;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(378, 47);
+            this.textBox9.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox9.Location = new System.Drawing.Point(404, 47);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(66, 20);
+            this.textBox9.Size = new System.Drawing.Size(66, 21);
             this.textBox9.TabIndex = 56;
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(450, 47);
+            this.textBox10.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox10.Location = new System.Drawing.Point(476, 47);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(108, 20);
+            this.textBox10.Size = new System.Drawing.Size(108, 21);
             this.textBox10.TabIndex = 57;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(378, 21);
+            this.textBox7.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox7.Location = new System.Drawing.Point(404, 21);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(66, 20);
+            this.textBox7.Size = new System.Drawing.Size(66, 21);
             this.textBox7.TabIndex = 54;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(450, 21);
+            this.textBox8.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox8.Location = new System.Drawing.Point(476, 21);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(108, 20);
+            this.textBox8.Size = new System.Drawing.Size(108, 21);
             this.textBox8.TabIndex = 55;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(92, 44);
+            this.textBox5.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox5.Location = new System.Drawing.Point(105, 44);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(66, 20);
+            this.textBox5.Size = new System.Drawing.Size(66, 21);
             this.textBox5.TabIndex = 52;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(164, 44);
+            this.textBox6.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox6.Location = new System.Drawing.Point(177, 44);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(108, 20);
+            this.textBox6.Size = new System.Drawing.Size(108, 21);
             this.textBox6.TabIndex = 53;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(23, 23);
+            this.label15.Location = new System.Drawing.Point(32, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 14);
             this.label15.TabIndex = 51;
@@ -373,7 +395,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(636, 27);
+            this.label11.Location = new System.Drawing.Point(644, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 14);
             this.label11.TabIndex = 38;
@@ -381,15 +403,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 20);
+            this.textBox2.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox2.Location = new System.Drawing.Point(105, 20);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 20);
+            this.textBox2.Size = new System.Drawing.Size(77, 21);
             this.textBox2.TabIndex = 26;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 23);
+            this.label3.Location = new System.Drawing.Point(188, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 11);
             this.label3.TabIndex = 27;
@@ -397,16 +420,17 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 20);
+            this.textBox3.Font = new System.Drawing.Font("굴림", 9F);
+            this.textBox3.Location = new System.Drawing.Point(208, 20);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
+            this.textBox3.Size = new System.Drawing.Size(77, 21);
             this.textBox3.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(303, 73);
+            this.label7.Location = new System.Drawing.Point(331, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 14);
             this.label7.TabIndex = 35;
@@ -416,7 +440,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(333, 26);
+            this.label5.Location = new System.Drawing.Point(361, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 14);
             this.label5.TabIndex = 31;
@@ -426,7 +450,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(303, 50);
+            this.label6.Location = new System.Drawing.Point(331, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 14);
             this.label6.TabIndex = 33;

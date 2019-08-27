@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary.EntityData;
+using ClassLibrary;
 
 namespace SMART_ERP_System
 {
     public partial class LoginControl : UserControl
     {
         private LoginForm _loginForm;
-
+        private List<사원등록> List = new List<사원등록>();
         public void RecieveLoginForm(LoginForm loginForm)
         {
             _loginForm = loginForm;
@@ -23,13 +24,14 @@ namespace SMART_ERP_System
         public LoginControl()
         {
             InitializeComponent();
+            List = DB.사원등록.GetAll();
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
         {            
             int checkResult;
 
-            DB.사원등록.Check(txbEmployeeCode.Text, txbPassWord.Text, out checkResult);
+            checkResult = List.Where(g => g.사원코드 == txbEmployeeCode.Text && g.암호 == txbPassWord.Text).Count();
 
             if (checkResult == 1)
             {

@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary;
 using ClassLibrary.EntityData;
+using SMART_ERP_System.MainForm_Control;
+using SMART_ERP_System.Class;
 
 namespace SMART_ERP_System.MenuUserControl
 {
     public partial class BOM등록및정전개 : UserControl
     {
+        제품번호구분Control 제품번호구분control;
         string currentvalue;
         int itemCnt;
         List<자재명세서> List = new List<자재명세서>();
@@ -129,8 +132,8 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void edit(string materials)
         {
-            var 자재ListDetail = 자재List.Where(y => y.자재번호 == materials).ToList();
-            var 명세서List = List.Where(y => y.자재번호 == materials).ToList();
+            var 자재ListDetail = DB.자재.GetAll().Where(y => y.자재번호 == materials).ToList();
+            var 명세서List = DB.자재명세서.GetAll().Where(y => y.자재번호 == materials).ToList();
             txbMaterialNum.Text = textBox1.Text;
             txb자재.Text = 명세서List[0].자재번호.ToString();
             txbMaterialName.Text = 자재ListDetail[0].자재명.ToString();
@@ -288,6 +291,18 @@ namespace SMART_ERP_System.MenuUserControl
                 e.Handled = true;
                 Button1_Click(null, null);
             }
+
+            if(e.KeyData == Keys.F2)
+            {
+                제품번호구분control = new 제품번호구분Control();
+                //제품단위.SendCode = textBox1.Text;
+                제품번호구분control.txbSearch.Text = textBox1.Text;
+                CodeHelperForm menuForm = new CodeHelperForm(제품번호구분control); 
+                menuForm.ShowDialog();
+
+
+                textBox1.Text = 제품단위.Code;
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -328,8 +343,14 @@ namespace SMART_ERP_System.MenuUserControl
             UpdateInfo.자재번호 = txb자재.Text;
             UpdateInfo.수량 = int.Parse(txbQty.Text);
             UpdateInfo.공정순서 = int.Parse(txbProcessNum.Text);
-            UpdateInfo.모품목 = txbPrentM.Text;
-            
+            if (txbPrentM.Text == "")
+            {
+                UpdateInfo.모품목 = null;
+            }
+            else
+            {
+                UpdateInfo.모품목 = txbPrentM.Text;
+            }
 
 
             if (List.Where(g => g.제품번호 == UpdateInfo.제품번호 && g.자재번호 == UpdateInfo.자재번호).ToList().Count() > 0
@@ -340,7 +361,10 @@ namespace SMART_ERP_System.MenuUserControl
                     MessageBox.Show("해당 자재는 없는 자재 입니다.");
                     return;
                 }
+
+
                 DB.자재명세서.Update(UpdateInfo);
+                List = DB.자재명세서.GetAll();
                 MessageBox.Show($"{UpdateInfo.제품번호}의 기존 {UpdateInfo.자재번호}를 업데이트 하였습니다.");
             }
             else if (UpdateInfo.제품번호 != string.Empty && UpdateInfo.자재번호 != string.Empty
@@ -352,6 +376,7 @@ namespace SMART_ERP_System.MenuUserControl
                     return;
                 }
                 DB.자재명세서.Insert(UpdateInfo);
+                List = DB.자재명세서.GetAll();
                 MessageBox.Show($"{UpdateInfo.제품번호}의 새로운 {UpdateInfo.자재번호}를 업데이트 하였습니다.");
             }
 
@@ -369,8 +394,6 @@ namespace SMART_ERP_System.MenuUserControl
             UpdateInfo.수량 = int.Parse(txbQty.Text);
             UpdateInfo.공정순서 = int.Parse(txbProcessNum.Text);
             UpdateInfo.모품목 = txbPrentM.Text;
-
-
             DB.자재명세서.Delete(UpdateInfo);
             MessageBox.Show($"{UpdateInfo.제품번호}의 자재번호 : {UpdateInfo.자재번호}가 삭제 되었습니다.");
 

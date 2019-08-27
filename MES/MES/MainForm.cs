@@ -123,15 +123,15 @@ namespace MES
         private void MainForm_Load(object sender, EventArgs e)
         {
             UcBottomButton bottomButton = new UcBottomButton();
-            bottomButton.Name = "소형라인";
-            bottomButton.btn1.Text = "소형라인";
+            bottomButton.Name = "전체";
+            bottomButton.btn1.Text = "전체";
             bottomButton.WorkSelected(UserControlList.workSelect);
             fpnlBottom.Controls.Add(bottomButton);
             timer1.Start();
             timer1.Interval = 1000;
-            lbl작업자.Text = loginMember.EmployeeName;
+            lbl작업자.Text = loginMember.EmployeeName.ToString();
 
-            
+
 
         }
 

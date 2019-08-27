@@ -31,6 +31,7 @@ namespace ClassLibrary
         public string 품목군 { get; set; }
         public bool 검사여부 { get; set; }
         public string 단위 { get; set; }
+        public string 관리단위 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<공급자재리스트> 공급자재리스트 { get; set; }
