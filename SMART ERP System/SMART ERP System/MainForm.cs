@@ -70,13 +70,19 @@ namespace SMART_ERP_System
                     if (control.Name == metroTabControl.SelectedTab.Text)
                     {
                         removeitem = control;
-                        control.Dispose();                        
+                        control.Dispose();
                     }
                 }
 
                 controls.Remove(removeitem);
 
                 metroTabControl.TabPages.Remove(metroTabControl.SelectedTab);
+                if (metroTabControl.SelectedIndex == 0)
+                {
+                    metroTabControl.SelectedIndex = tabindex;
+                    return;
+                }
+
                 metroTabControl.SelectedIndex = tabindex - 1;
             }
 
@@ -122,13 +128,22 @@ namespace SMART_ERP_System
                 {
                     int CurrentPageNumber = metroTabControl.SelectedIndex;
 
-                    foreach (UserControl item in controls)
+                    for (int i = 0; i < controls.Count; i++)
                     {
-                        if (item.Name == SearchName)
-                        {                            
+                        if (controls[i].Name == SearchName)
+                        {
+                            metroTabControl.SelectedIndex = i;
                             return;
                         }
                     }
+
+                    //foreach (UserControl item in controls)
+                    //{
+                    //    if (item.Name == SearchName)
+                    //    {                            
+                    //        return;
+                    //    }
+                    //}
 
                     // tab 10개 제한
                     if (tabPageCnt < 10)
@@ -138,7 +153,7 @@ namespace SMART_ERP_System
 
                         MakeTabPage(control);
 
-                       // metroTabControl.SelectedIndex = CurrentPageNumber;
+                        // metroTabControl.SelectedIndex = CurrentPageNumber;
                     }
                     else
                         return;

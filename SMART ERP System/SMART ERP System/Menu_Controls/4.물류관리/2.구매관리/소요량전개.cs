@@ -19,17 +19,17 @@ namespace SMART_ERP_System.MenuUserControl
         {
             InitializeComponent();
             SetData();
-            
+
         }
-        
+
         private void btn소요량전개_Click(object sender, EventArgs e)
         {
             dgv소요량전개.Rows.Clear();
-            
+
             var 수주List = DB.수주.GetAll(txb제품이름.Text, FirstDate.Value, LastDate.Value);
 
             List<string> 제품번호 = 수주List.Select(x => x.제품번호).Distinct().ToList();
-           
+
             List<자재명세서> Input자재명세서 = new List<자재명세서>();
 
             for (int i = 0; i < 제품번호.Count; i++)
@@ -49,26 +49,26 @@ namespace SMART_ERP_System.MenuUserControl
                 수량.Add(0);
 
             for (int i = 0; i < 제품번호.Count; i++)
-                Output자재명세서.AddRange(DB.자재명세서.Get자재명세서(제품번호[i]));          
+                Output자재명세서.AddRange(DB.자재명세서.Get자재명세서(제품번호[i]));
 
             for (int i = 0; i < Output자재명세서.Count; i++)
-                Output자재명세서[i].수량 = 0;     
+                Output자재명세서[i].수량 = 0;
 
             for (int i = 0; i < 수주List.Count; i++)
             {
                 for (int j = 0; j < Input자재명세서.Count; j++)
                 {
                     if (Input자재명세서[j].제품번호 == 수주List[i].제품번호)
-                    { 
-                        Output자재명세서[j].수량 = 
+                    {
+                        Output자재명세서[j].수량 =
                             Input자재명세서[j].수량 * 수주List[i].잔량;
 
                         for (int k = 0; k < 자재번호.Count; k++)
                         {
-                            if(자재번호[k] == Output자재명세서[j].자재번호)
+                            if (자재번호[k] == Output자재명세서[j].자재번호)
                                 수량[k] += Output자재명세서[j].수량;
                         }
-                    }       
+                    }
                 }
             }
 
@@ -78,11 +78,7 @@ namespace SMART_ERP_System.MenuUserControl
                     dgv소요량전개.Rows.Add();
                 dgv소요량전개.Rows[i].Cells[0].Value = 자재번호[i];
                 dgv소요량전개.Rows[i].Cells[1].Value = DB.자재.Get자재이름(자재번호[i]);
-                if(dgv소요량전개.Rows[i].Cells[1].Value.ToString() == "PIPE")
-                    dgv소요량전개.Rows[i].Cells[2].Value = 수량[i]/6000;
-    
-                else
-                    dgv소요량전개.Rows[i].Cells[2].Value = 수량[i];               
+                dgv소요량전개.Rows[i].Cells[2].Value = 수량[i];
             }
         }
 

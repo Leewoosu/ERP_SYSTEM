@@ -939,5 +939,10 @@ namespace SMART_ERP_System.MenuUserControl
                 //MessageBox.Show("error.");
             }
         }
+
+        private void Cbb사업장코드_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txb사업장명.Text = DB.사업장.SearchChangedValue(cbb사업장코드.Text);
+        }
     }
 }

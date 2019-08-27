@@ -58,8 +58,7 @@ namespace SMART_ERP_System.MenuUserControl
                 {
                     txb제품번호.Text = 제품번호;
                     txb제품명.Text = dgv제품.CurrentRow.Cells[1].Value.ToString();
-                    txbLOT수량.Text = DB.제품.SearchLOT수량(제품번호);
-                    if (DB.제품.Search검사여부(제품번호) == true)
+                    if (DB.제품.Search검사여부(제품번호) == "true")
                         cbb검사여부.Text = "1. 예";
                     else cbb검사여부.Text = "2. 아니요";
                     txb리드타임.Text = DB.제품.Search리드타임(제품번호);
@@ -87,7 +86,6 @@ namespace SMART_ERP_System.MenuUserControl
                     txb품목군.Focus();
                     txb제품번호.Text = dgv제품.CurrentRow.Cells[0].Value.ToString();
                     txb제품명.Text = dgv제품.CurrentRow.Cells[1].Value.ToString();
-                    txbLOT수량.Text = null;
                     cbb검사여부.Text = null;
                     txb리드타임.Text = null;
                     txb실제원가.Text = null;
@@ -112,8 +110,7 @@ namespace SMART_ERP_System.MenuUserControl
             //제품정보불러오기
             txb제품번호.Text = 제품번호.ToString();
             txb제품명.Text = dgv제품.CurrentRow.Cells[1].Value.ToString();
-            txbLOT수량.Text = DB.제품.SearchLOT수량(제품번호);
-            if (DB.제품.Search검사여부(제품번호) == true)
+            if (DB.제품.Search검사여부(제품번호) == "true")
                 cbb검사여부.Text = "1. 예";
             else cbb검사여부.Text = "2. 아니요";
             
@@ -122,7 +119,7 @@ namespace SMART_ERP_System.MenuUserControl
             txb안전재고량.Text = DB.제품.Search안전재고량(제품번호);
             txb외경.Text = DB.제품.Search외경(제품번호);
             txb일별생산량.Text = DB.제품.Search일별생산량(제품번호);
-
+            txb재고량.Text = DB.제품.Search재고량(제품번호);
             txb층.Text = DB.제품.Search층(제품번호);
             txb표준원가.Text = DB.제품.Search표준원가(제품번호);
             txb품목군.Text = DB.제품.Search품목군(제품번호);
@@ -134,17 +131,16 @@ namespace SMART_ERP_System.MenuUserControl
 
             productInfo.제품번호 = txb제품번호.Text;
             productInfo.제품명 = txb제품명.Text;
-            productInfo.LOT수량 = int.Parse(txbLOT수량.Text);
 
             if (cbb검사여부.Text == "1. 예")
-                productInfo.검사여부 = true;
-            else productInfo.검사여부 = false;
+                productInfo.검사여부 = "true";
+            else productInfo.검사여부 = "false";
             productInfo.리드타임 = int.Parse(txb리드타임.Text);
             productInfo.실제원가 = int.Parse(txb실제원가.Text);
             productInfo.안전재고량 = int.Parse(txb안전재고량.Text);
             productInfo.외경 = int.Parse(txb외경.Text);
             productInfo.일별생산량 = int.Parse(txb일별생산량.Text);
-
+            productInfo.재고량 = int.Parse(txb재고량.Text);
             productInfo.층 = int.Parse(txb층.Text);
             productInfo.표준원가 = int.Parse(txb표준원가.Text);
             productInfo.품목군 = txb품목군.Text;
@@ -171,10 +167,9 @@ namespace SMART_ERP_System.MenuUserControl
 
             productInfo.제품번호 = txb제품번호.Text;
             productInfo.제품명 = txb제품명.Text;
-            productInfo.LOT수량 = int.Parse(txbLOT수량.Text);
             if (cbb검사여부.Text == "1. 예")
-                productInfo.검사여부 = true;
-            else productInfo.검사여부 = false;
+                productInfo.검사여부 = "true";
+            else productInfo.검사여부 = "false";
             productInfo.리드타임 = int.Parse(txb리드타임.Text);
             productInfo.실제원가 = int.Parse(txb실제원가.Text);
             productInfo.안전재고량 = int.Parse(txb안전재고량.Text);
@@ -183,7 +178,7 @@ namespace SMART_ERP_System.MenuUserControl
             productInfo.층 = int.Parse(txb층.Text);
             productInfo.표준원가 = int.Parse(txb표준원가.Text);
             productInfo.품목군 = txb품목군.Text;
-
+            productInfo.재고량 = int.Parse(txb재고량.Text);
             DB.제품.Update(productInfo);
             MessageBox.Show("변경");
 
@@ -197,7 +192,7 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void 품목등록_Load(object sender, EventArgs e)
         {
-            제품BindingSource.DataSource = DB.제품.GetAll();
+            제품BindingSource.DataSource = DB.제품.GetAll().Select(x => x.품목군).Distinct();
 
             cbb품목군.SelectedIndex = -1;
 

@@ -69,6 +69,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn등록 = new System.Windows.Forms.Button();
+            this.관리단위 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txb관리단위 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txb구매단가 = new System.Windows.Forms.TextBox();
+            this.txb단위 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).BeginInit();
@@ -287,6 +293,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txb단위);
+            this.panel2.Controls.Add(this.txb구매단가);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.txb관리단위);
+            this.panel2.Controls.Add(this.관리단위);
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.cbb검사여부);
             this.panel2.Controls.Add(this.txb공급업체);
             this.panel2.Controls.Add(this.label4);
@@ -448,6 +460,57 @@
             this.btn등록.UseVisualStyleBackColor = true;
             this.btn등록.Click += new System.EventHandler(this.Btn등록_Click);
             // 
+            // 관리단위
+            // 
+            this.관리단위.AutoSize = true;
+            this.관리단위.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.관리단위.Location = new System.Drawing.Point(270, 226);
+            this.관리단위.Name = "관리단위";
+            this.관리단위.Size = new System.Drawing.Size(72, 12);
+            this.관리단위.TabIndex = 29;
+            this.관리단위.Text = "관리단위 : ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(14, 229);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 12);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "구매단가 : ";
+            // 
+            // txb관리단위
+            // 
+            this.txb관리단위.Location = new System.Drawing.Point(353, 223);
+            this.txb관리단위.Name = "txb관리단위";
+            this.txb관리단위.Size = new System.Drawing.Size(150, 21);
+            this.txb관리단위.TabIndex = 32;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(14, 281);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 12);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "단위 : ";
+            // 
+            // txb구매단가
+            // 
+            this.txb구매단가.Location = new System.Drawing.Point(92, 226);
+            this.txb구매단가.Name = "txb구매단가";
+            this.txb구매단가.Size = new System.Drawing.Size(150, 21);
+            this.txb구매단가.TabIndex = 37;
+            // 
+            // txb단위
+            // 
+            this.txb단위.Location = new System.Drawing.Point(92, 275);
+            this.txb단위.Name = "txb단위";
+            this.txb단위.Size = new System.Drawing.Size(150, 21);
+            this.txb단위.TabIndex = 38;
+            // 
             // 자재등록
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -519,5 +582,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.BindingSource 사원등록BindingSource;
         private System.Windows.Forms.BindingSource 부서등록BindingSource;
+        private System.Windows.Forms.TextBox txb단위;
+        private System.Windows.Forms.TextBox txb구매단가;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txb관리단위;
+        private System.Windows.Forms.Label 관리단위;
+        private System.Windows.Forms.Label label13;
     }
 }

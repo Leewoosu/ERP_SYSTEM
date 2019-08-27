@@ -140,12 +140,13 @@
             this.cbb사업장코드.DisplayMember = "사업장코드";
             this.cbb사업장코드.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb사업장코드.FormattingEnabled = true;
-            this.cbb사업장코드.Location = new System.Drawing.Point(95, 5);
+            this.cbb사업장코드.Location = new System.Drawing.Point(74, 5);
             this.cbb사업장코드.Name = "cbb사업장코드";
             this.cbb사업장코드.Size = new System.Drawing.Size(64, 21);
             this.cbb사업장코드.TabIndex = 120;
             this.cbb사업장코드.TabStop = false;
             this.cbb사업장코드.ValueMember = "사업장코드";
+            this.cbb사업장코드.SelectedValueChanged += new System.EventHandler(this.Cbb사업장코드_SelectedValueChanged);
             // 
             // 사업장등록BindingSource
             // 
@@ -157,7 +158,7 @@
             this.cbb부서코드.DisplayMember = "부서코드";
             this.cbb부서코드.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb부서코드.FormattingEnabled = true;
-            this.cbb부서코드.Location = new System.Drawing.Point(348, 5);
+            this.cbb부서코드.Location = new System.Drawing.Point(355, 5);
             this.cbb부서코드.Name = "cbb부서코드";
             this.cbb부서코드.Size = new System.Drawing.Size(83, 21);
             this.cbb부서코드.TabIndex = 125;
@@ -174,9 +175,9 @@
             this.cbb사원코드.DisplayMember = "사원코드";
             this.cbb사원코드.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb사원코드.FormattingEnabled = true;
-            this.cbb사원코드.Location = new System.Drawing.Point(583, 5);
+            this.cbb사원코드.Location = new System.Drawing.Point(603, 5);
             this.cbb사원코드.Name = "cbb사원코드";
-            this.cbb사원코드.Size = new System.Drawing.Size(83, 21);
+            this.cbb사원코드.Size = new System.Drawing.Size(96, 21);
             this.cbb사원코드.TabIndex = 126;
             this.cbb사원코드.ValueMember = "사원코드";
             this.cbb사원코드.SelectedValueChanged += new System.EventHandler(this.Cbb사원코드_SelectedValueChanged);
@@ -189,7 +190,7 @@
             // 
             this.cbb월.Font = new System.Drawing.Font("굴림", 10F);
             this.cbb월.FormattingEnabled = true;
-            this.cbb월.Location = new System.Drawing.Point(831, 6);
+            this.cbb월.Location = new System.Drawing.Point(863, 6);
             this.cbb월.Name = "cbb월";
             this.cbb월.Size = new System.Drawing.Size(36, 21);
             this.cbb월.TabIndex = 130;
@@ -198,7 +199,7 @@
             // 
             this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label8.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(903, 9);
+            this.label8.Location = new System.Drawing.Point(935, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 22);
             this.label8.TabIndex = 104;
@@ -206,7 +207,7 @@
             // 
             // txb일
             // 
-            this.txb일.Location = new System.Drawing.Point(869, 6);
+            this.txb일.Location = new System.Drawing.Point(901, 6);
             this.txb일.Name = "txb일";
             this.txb일.Size = new System.Drawing.Size(36, 21);
             this.txb일.TabIndex = 102;
@@ -217,7 +218,7 @@
             // 
             this.lbl회계년도.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lbl회계년도.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl회계년도.Location = new System.Drawing.Point(786, 8);
+            this.lbl회계년도.Location = new System.Drawing.Point(818, 8);
             this.lbl회계년도.Name = "lbl회계년도";
             this.lbl회계년도.Size = new System.Drawing.Size(79, 22);
             this.lbl회계년도.TabIndex = 129;
@@ -225,14 +226,14 @@
             // 
             // txb사원명
             // 
-            this.txb사원명.Location = new System.Drawing.Point(673, 5);
+            this.txb사원명.Location = new System.Drawing.Point(705, 5);
             this.txb사원명.Name = "txb사원명";
             this.txb사원명.Size = new System.Drawing.Size(82, 21);
             this.txb사원명.TabIndex = 127;
             // 
             // txb부서명
             // 
-            this.txb부서명.Location = new System.Drawing.Point(441, 5);
+            this.txb부서명.Location = new System.Drawing.Point(444, 5);
             this.txb부서명.Name = "txb부서명";
             this.txb부서명.Size = new System.Drawing.Size(82, 21);
             this.txb부서명.TabIndex = 124;
@@ -240,9 +241,9 @@
             // txb사업장명
             // 
             this.txb사업장명.Enabled = false;
-            this.txb사업장명.Location = new System.Drawing.Point(165, 5);
+            this.txb사업장명.Location = new System.Drawing.Point(144, 5);
             this.txb사업장명.Name = "txb사업장명";
-            this.txb사업장명.Size = new System.Drawing.Size(107, 21);
+            this.txb사업장명.Size = new System.Drawing.Size(128, 21);
             this.txb사업장명.TabIndex = 123;
             this.txb사업장명.TabStop = false;
             // 
@@ -250,7 +251,7 @@
             // 
             this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label5.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(529, 8);
+            this.label5.Location = new System.Drawing.Point(546, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 22);
             this.label5.TabIndex = 122;
@@ -260,7 +261,7 @@
             // 
             this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(282, 9);
+            this.label4.Location = new System.Drawing.Point(288, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 22);
             this.label4.TabIndex = 121;
@@ -270,7 +271,7 @@
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Font = new System.Drawing.Font("굴림", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(27, 9);
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 119;

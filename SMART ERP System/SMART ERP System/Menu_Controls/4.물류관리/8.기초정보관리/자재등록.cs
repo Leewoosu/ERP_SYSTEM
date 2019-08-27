@@ -54,7 +54,9 @@ namespace SMART_ERP_System.MenuUserControl
             productInfo.리드타임 = int.Parse(txb리드타임.Text);
             productInfo.재고량 = int.Parse(txb재고량.Text);
             productInfo.안전재고량 = int.Parse(txb안전재고량.Text);
-
+            productInfo.단위 = txb단위.Text;
+            productInfo.관리단위 = txb관리단위.Text;
+            productInfo.구매단가 = int.Parse(txb구매단가.Text);
             productInfo.품목군 = txb품목군.Text;
 
             DB.자재.Insert(productInfo);
@@ -68,7 +70,7 @@ namespace SMART_ERP_System.MenuUserControl
         private void Btn변경_Click(object sender, EventArgs e)
         {
             string 공급업체번호 = DB.일반거래처.Get공급업체번호From이름(txb공급업체.Text).Select(x => x.거래처코드번호).First();
-            if (DB.공급자재리스트.Search공급자재리스트(공급업체번호, dgv자재.CurrentRow.Cells[0].Value.ToString()).Count == 0)
+            if (DB.공급자재리스트.Search공급자재리스트(dgv자재.CurrentRow.Cells[0].Value.ToString()).Count == 0)
             {
                 공급자재리스트 공급자재리스트 = new 공급자재리스트();
                 공급자재리스트.자재번호 = txb자재번호.Text;
@@ -88,7 +90,9 @@ namespace SMART_ERP_System.MenuUserControl
             productInfo.리드타임 = int.Parse(txb리드타임.Text);
             productInfo.재고량 = int.Parse(txb재고량.Text);
             productInfo.안전재고량 = int.Parse(txb안전재고량.Text);
-
+            productInfo.단위 = txb단위.Text;
+            productInfo.관리단위 = txb관리단위.Text;
+            productInfo.구매단가 = int.Parse(txb구매단가.Text);
             productInfo.품목군 = txb품목군.Text;
 
             DB.자재.Update(productInfo);
@@ -99,8 +103,8 @@ namespace SMART_ERP_System.MenuUserControl
 
         private void Btn삭제_Click(object sender, EventArgs e)
         {
-            공급자재리스트 공급자재리스트 = DB.공급자재리스트.Search공급자재리스트(dgv자재.CurrentRow.Cells[0].Value.ToString(),
-                dgv자재.CurrentRow.Cells[0].Value.ToString()).First();
+            공급자재리스트 공급자재리스트 = DB.공급자재리스트.Search공급자재리스트(dgv자재.CurrentRow.Cells[0].Value.ToString()
+                ).FirstOrDefault();
 
             DB.공급자재리스트.Delete(공급자재리스트);
 
@@ -112,6 +116,18 @@ namespace SMART_ERP_System.MenuUserControl
             MessageBox.Show("삭제");
 
             조회();
+
+            txb자재번호.Text = null;
+            txb자재이름.Text = null;
+            txb품목군.Text = null;
+            txb안전재고량.Text = null;
+            txb재고량.Text = null;
+            txb리드타임.Text = null;
+            cbb검사여부.Text = null;
+            txb단위.Text = null;
+            txb관리단위.Text = null;
+            txb구매단가.Text = null;
+            txb공급업체.Text = null;
         }
         private void Dgv자재_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,6 +144,9 @@ namespace SMART_ERP_System.MenuUserControl
                 cbb검사여부.Text = "1. 예";
             else cbb검사여부.Text = "2. 아니요";
             txb공급업체.Text = DB.자재.Search공급업체(자재번호);
+            txb단위.Text = DB.자재.Get자재(자재번호).Select(x => x.단위).FirstOrDefault();
+            txb관리단위.Text = DB.자재.Get자재(자재번호).Select(x => x.관리단위).FirstOrDefault();
+            txb구매단가.Text = DB.자재.Get자재(자재번호).Select(x => x.구매단가).FirstOrDefault().ToString();
         }
 
         private void Dgv자재_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -173,6 +192,9 @@ namespace SMART_ERP_System.MenuUserControl
                         cbb검사여부.Text = "1. 예";
                     else cbb검사여부.Text = "2. 아니요";
                     txb공급업체.Text = DB.자재.Search공급업체(자재번호);
+                    txb단위.Text = DB.자재.Get자재(자재번호).Select(x => x.단위).FirstOrDefault();
+                    txb관리단위.Text = DB.자재.Get자재(자재번호).Select(x => x.관리단위).FirstOrDefault();
+                    txb구매단가.Text = DB.자재.Get자재(자재번호).Select(x => x.구매단가).FirstOrDefault().ToString();
                     return;
                 }
 
@@ -194,7 +216,9 @@ namespace SMART_ERP_System.MenuUserControl
                     txb재고량.Text = null;
                     txb리드타임.Text = null;
                     cbb검사여부.Text = null;
-
+                    txb단위.Text = null;
+                    txb관리단위.Text = null;
+                    txb구매단가.Text = null;
                     txb공급업체.Text = null;
                 }
             }

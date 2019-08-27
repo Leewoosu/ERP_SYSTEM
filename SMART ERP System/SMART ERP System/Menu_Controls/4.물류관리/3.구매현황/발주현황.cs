@@ -39,7 +39,7 @@ namespace SMART_ERP_System.MenuUserControl
             for (int i = 0; i < list1.Count; i++)
             {
                 dgv발주리스트.Rows.Add();
-                dgv발주리스트.Rows[i].Cells[0].Value = DB.자재.Get자재이름(list1[i].자재번호);
+                dgv발주리스트.Rows[i].Cells[0].Value = list1[i].자재번호;
                 dgv발주리스트.Rows[i].Cells[1].Value = list1[i].수량;              
             }
 
@@ -63,7 +63,7 @@ namespace SMART_ERP_System.MenuUserControl
                 {
                     //dgv리스트의 자재이름과 입고등록리스트의 자재번호를 통해 자재이름을 출력받은 것과 비교해서 일치하면
                     //
-                    if (dgv발주리스트.Rows[i].Cells[0].Value.ToString() == DB.자재.Get자재이름(입고등록리스트[j].자재번호))
+                    if (dgv발주리스트.Rows[i].Cells[0].Value.ToString() == (입고등록리스트[j].자재번호))
                     {
                         if (DB.발주리스트.Search발주리스트(dgv발주.CurrentRow.Cells[0].Value.ToString(),
                                dgv발주리스트.Rows[i].Cells[0].Value.ToString()).Count != 0)                        

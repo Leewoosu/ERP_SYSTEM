@@ -51,7 +51,7 @@ namespace SMART_ERP_System.MenuUserControl
                 dgv입고등록리스트.Rows.Add();
                 for (int i = 0; i < list.Count; i++)
                 {
-                    dgv입고등록리스트.Rows[i].Cells[0].Value = DB.자재.Get자재이름(list[i].자재번호);
+                    dgv입고등록리스트.Rows[i].Cells[0].Value = list[i].자재번호;
                     dgv입고등록리스트.Rows[i].Cells[1].Value = list[i].양품수량;
                     dgv입고등록리스트.Rows[i].Cells[2].Value = list[i].불량수량;
                     if (i != list.Count - 1)
@@ -78,7 +78,7 @@ namespace SMART_ERP_System.MenuUserControl
                 }
                 else
                 {
-                    if (DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Count == 0)
+                    if (DB.자재.Get자재(dgv.CurrentRow.Cells[0].Value.ToString()).Count == 0)
                         MessageBox.Show("등록되지 않은 자재입니다");
 
                     else
@@ -110,13 +110,13 @@ namespace SMART_ERP_System.MenuUserControl
                 }
                 else //값이 다 들어갔을 때
                 {
-                    string 자재번호 = DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault();
+                    string 자재번호 = dgv.CurrentRow.Cells[0].Value.ToString();
                     반품처리서 반품처리서 = new 반품처리서();
                     if (DB.입고등록리스트.Search입고등록리스트(dgv입고등록.CurrentRow.Cells[0].Value.ToString(), 자재번호).Count == 0)
                     {
                         입고등록리스트 입고등록리스트 = new 입고등록리스트();
                         입고등록리스트.입고등록번호 = dgv입고등록.CurrentRow.Cells[0].Value.ToString();
-                        입고등록리스트.자재번호 = DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault();
+                        입고등록리스트.자재번호 = dgv.CurrentRow.Cells[0].Value.ToString();
                         입고등록리스트.양품수량 = int.Parse(dgv.CurrentRow.Cells[1].Value.ToString());
                         입고등록리스트.불량수량 = int.Parse(dgv.CurrentRow.Cells[2].Value.ToString());
                         DB.입고등록리스트.Insert(입고등록리스트);
@@ -125,7 +125,6 @@ namespace SMART_ERP_System.MenuUserControl
                         자재.재고량 += (int)입고등록리스트.양품수량;
                         DB.자재.Update(자재);
                         //발주리스트에 양품수량인 갯수를 뺴줌으로 인해 발주량이 몇개가 와야하는지 알 수 있음
-                        MessageBox.Show("입고등록리스트");
 
                         if (입고등록리스트.불량수량 > 0)
                         {
@@ -153,14 +152,14 @@ namespace SMART_ERP_System.MenuUserControl
 
                         입고등록리스트 입고등록리스트 = new 입고등록리스트();
                         입고등록리스트.입고등록번호 = dgv입고등록.CurrentRow.Cells[0].Value.ToString();
-                        입고등록리스트.자재번호 = DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault();
+                        입고등록리스트.자재번호 = dgv.CurrentRow.Cells[0].Value.ToString();
 
                         //양품수량 수정
                         if (list.양품수량 !=
                             int.Parse(dgv입고등록리스트.CurrentRow.Cells[1].Value.ToString()))
                         {
                             //수량이 변하면 기존의 양품수량을 빼준다음 변경된 수량을 다시 더해주면서 업데이트
-                            var 자재 = DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).FirstOrDefault();
+                            var 자재 = DB.자재.Get자재(dgv.CurrentRow.Cells[0].Value.ToString()).FirstOrDefault();
                             자재.재고량 -= (int)list.양품수량;
                             자재.재고량 += int.Parse(dgv입고등록리스트.CurrentRow.Cells[1].Value.ToString());
                             DB.자재.Update(자재);
@@ -183,7 +182,7 @@ namespace SMART_ERP_System.MenuUserControl
                                 int.Parse(dgv입고등록리스트.CurrentRow.Cells[1].Value.ToString());
 
                             //불량수량에 대한 불량상세정보 지우기
-                            if (DB.불량상세정보.Search불량상세정보(dgv입고등록.CurrentRow.Cells[0].Value.ToString(), DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault()).Count > 0)
+                            if (DB.불량상세정보.Search불량상세정보(dgv입고등록.CurrentRow.Cells[0].Value.ToString(), dgv.CurrentRow.Cells[0].Value.ToString()).Count !=0)
                             {
                                 불량상세정보 불량상세정보 = new 불량상세정보();
 
@@ -191,7 +190,7 @@ namespace SMART_ERP_System.MenuUserControl
                                     DB.불량상세정보.Search불량상세정보(dgv입고등록.CurrentRow.Cells[0].Value.ToString(), DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault());
 
                                 불량상세정보.입고등록번호 = dgv입고등록.CurrentRow.Cells[0].Value.ToString();
-                                불량상세정보.자재번호 = DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault();
+                                불량상세정보.자재번호 = dgv.CurrentRow.Cells[0].Value.ToString();
 
                                 for (int j = 0; j < list1.Count; j++)
                                 {
@@ -244,7 +243,7 @@ namespace SMART_ERP_System.MenuUserControl
                                 {                                   
                                     반품처리리스트 반품처리리스트 = new 반품처리리스트();
                                     반품처리리스트.반품처리번호 = DB.반품처리서.Search반품처리서From입고등록번호(dgv입고등록.CurrentRow.Cells[0].Value.ToString()).Select(x=>x.반품처리서번호).FirstOrDefault();
-                                    반품처리리스트.자재번호 = DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault();
+                                    반품처리리스트.자재번호 = dgv.CurrentRow.Cells[0].Value.ToString();
                                     반품처리리스트.수량 = int.Parse(dgv입고등록리스트.CurrentRow.Cells[2].Value.ToString());
 
                                     DB.반품처리리스트.Insert(반품처리리스트);
@@ -266,12 +265,12 @@ namespace SMART_ERP_System.MenuUserControl
             if (dgv.CurrentRow.Cells[0].Value == null) return;
 
             if (DB.불량상세정보.Search불량상세정보(dgv입고등록.CurrentRow.Cells[0].Value.ToString(),
-                DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault()).Count > 0)
+                dgv.CurrentRow.Cells[0].Value.ToString()).Count > 0)
             {
                 dgv불량상세정보.Rows.Clear();
 
                 var list = DB.불량상세정보.Search불량상세정보(dgv입고등록.CurrentRow.Cells[0].Value.ToString(),
-                DB.자재.Get자재번호(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault());
+                DB.자재.Get자재(dgv.CurrentRow.Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault());
 
                 for (int i = 0; i < list.Count; i++)
                 {
@@ -331,7 +330,6 @@ namespace SMART_ERP_System.MenuUserControl
                             {
                                 DB.입고등록.Insert(입고등록정보);
 
-                                MessageBox.Show("입고등록정보");
                                 dgv.CurrentCell = dgv[nowColum, nowRow];
                                 dgv.Rows.Add();
                                 dgv입고등록리스트.Rows.Add();
@@ -384,14 +382,13 @@ namespace SMART_ERP_System.MenuUserControl
                     불량상세정보 불량상세정보 = new 불량상세정보();
                     불량상세정보.입고등록번호 = dgv입고등록.CurrentRow.Cells[0].Value.ToString();
                     불량상세정보.자재번호 =
-                        DB.자재.Get자재번호(dgv입고등록리스트.Rows[입고등록리스트nowRow].Cells[0].Value.ToString()).Select(x => x.자재번호).FirstOrDefault();
+                        dgv입고등록리스트.Rows[입고등록리스트nowRow].Cells[0].Value.ToString();
                     for (int i = 0; i < maxRow; i++)
                     {
                         불량상세정보.불량코드번호 = dgv.Rows[i].Cells[0].Value.ToString();
                         불량상세정보.불량수량 = int.Parse(dgv.Rows[i].Cells[1].Value.ToString());
                         DB.불량상세정보.Insert(불량상세정보);
                     }
-                    MessageBox.Show("불량상세정보");
                     dgv.Rows.Clear();
 
                     dgv입고등록리스트.Focus();

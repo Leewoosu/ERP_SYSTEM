@@ -145,7 +145,7 @@ namespace SMART_ERP_System.MenuUserControl
                     {
                         발주리스트 발주리스트 = new 발주리스트();
                         발주리스트.발주번호 = dgv발주서.CurrentRow.Cells[0].Value.ToString();
-                        발주리스트.자재번호 = DB.자재.Get자재번호(dgv[0, e.RowIndex].Value.ToString()).Select(x => x.자재번호).First().ToString();
+                        발주리스트.자재번호 = dgv[0, e.RowIndex].Value.ToString();
                         발주리스트.수량 = int.Parse(dgv[1, e.RowIndex].Value.ToString());
 
                         DB.발주리스트.Insert(발주리스트);
@@ -228,7 +228,7 @@ namespace SMART_ERP_System.MenuUserControl
             dgv발주리스트.Rows.Add();
             for (int i = 0; i < list.Count; i++)
             {
-                dgv발주리스트.Rows[i].Cells[0].Value = DB.자재.Get자재이름(list[i].자재번호);
+                dgv발주리스트.Rows[i].Cells[0].Value = list[i].자재번호;
                 dgv발주리스트.Rows[i].Cells[1].Value = list[i].수량;
 
                 if (i != list.Count-1)

@@ -36,6 +36,8 @@
             this.btn변경 = new System.Windows.Forms.Button();
             this.btn삭제 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbb품목군 = new System.Windows.Forms.ComboBox();
+            this.제품BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbb사원코드 = new System.Windows.Forms.ComboBox();
             this.사원등록BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbb부서코드 = new System.Windows.Forms.ComboBox();
@@ -57,8 +59,6 @@
             this.txb층 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cbb검사여부 = new System.Windows.Forms.ComboBox();
-            this.txb재고량 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txb품목군 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -67,10 +67,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txb리드타임 = new System.Windows.Forms.TextBox();
-            this.txbLOT수량 = new System.Windows.Forms.TextBox();
             this.txb제품명 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txb표준원가 = new System.Windows.Forms.TextBox();
             this.txb안전재고량 = new System.Windows.Forms.TextBox();
@@ -78,15 +76,15 @@
             this.txb제품번호 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbb품목군 = new System.Windows.Forms.ComboBox();
-            this.제품BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txb재고량 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.제품BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv제품)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.제품BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,6 +164,21 @@
             this.groupBox1.Size = new System.Drawing.Size(1012, 96);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // cbb품목군
+            // 
+            this.cbb품목군.DataSource = this.제품BindingSource;
+            this.cbb품목군.DisplayMember = "품목군";
+            this.cbb품목군.FormattingEnabled = true;
+            this.cbb품목군.Location = new System.Drawing.Point(79, 60);
+            this.cbb품목군.Name = "cbb품목군";
+            this.cbb품목군.Size = new System.Drawing.Size(179, 20);
+            this.cbb품목군.TabIndex = 84;
+            this.cbb품목군.ValueMember = "제품번호";
+            // 
+            // 제품BindingSource
+            // 
+            this.제품BindingSource.DataSource = typeof(ClassLibrary.제품);
             // 
             // cbb사원코드
             // 
@@ -262,7 +275,7 @@
             this.panel1.Controls.Add(this.dgv제품);
             this.panel1.Location = new System.Drawing.Point(6, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(397, 495);
+            this.panel1.Size = new System.Drawing.Size(397, 477);
             this.panel1.TabIndex = 7;
             // 
             // dgv제품
@@ -278,7 +291,7 @@
             this.dgv제품.Name = "dgv제품";
             this.dgv제품.RowTemplate.Height = 23;
             this.dgv제품.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv제품.Size = new System.Drawing.Size(397, 495);
+            this.dgv제품.Size = new System.Drawing.Size(397, 477);
             this.dgv제품.TabIndex = 0;
             this.dgv제품.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv제품_CellDoubleClick);
             this.dgv제품.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv제품_CellEndEdit);
@@ -296,13 +309,13 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txb재고량);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txb외경);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txb층);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.cbb검사여부);
-            this.panel2.Controls.Add(this.txb재고량);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txb품목군);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label19);
@@ -311,10 +324,8 @@
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txb리드타임);
-            this.panel2.Controls.Add(this.txbLOT수량);
             this.panel2.Controls.Add(this.txb제품명);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.txb표준원가);
             this.panel2.Controls.Add(this.txb안전재고량);
@@ -368,23 +379,6 @@
             this.cbb검사여부.Name = "cbb검사여부";
             this.cbb검사여부.Size = new System.Drawing.Size(150, 20);
             this.cbb검사여부.TabIndex = 7;
-            // 
-            // txb재고량
-            // 
-            this.txb재고량.Location = new System.Drawing.Point(138, 356);
-            this.txb재고량.Name = "txb재고량";
-            this.txb재고량.Size = new System.Drawing.Size(150, 21);
-            this.txb재고량.TabIndex = 35;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(69, 359);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 12);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "재고량";
             // 
             // txb품목군
             // 
@@ -454,13 +448,6 @@
             this.txb리드타임.Size = new System.Drawing.Size(150, 21);
             this.txb리드타임.TabIndex = 23;
             // 
-            // txbLOT수량
-            // 
-            this.txbLOT수량.Location = new System.Drawing.Point(373, 77);
-            this.txbLOT수량.Name = "txbLOT수량";
-            this.txbLOT수량.Size = new System.Drawing.Size(150, 21);
-            this.txbLOT수량.TabIndex = 22;
-            // 
             // txb제품명
             // 
             this.txb제품명.Location = new System.Drawing.Point(373, 19);
@@ -478,16 +465,6 @@
             this.label12.Size = new System.Drawing.Size(57, 12);
             this.label12.TabIndex = 20;
             this.label12.Text = "리드타임";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(304, 80);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 12);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "LOT수량";
             // 
             // label14
             // 
@@ -551,20 +528,22 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "제품번호";
             // 
-            // cbb품목군
+            // txb재고량
             // 
-            this.cbb품목군.DataSource = this.제품BindingSource;
-            this.cbb품목군.DisplayMember = "품목군";
-            this.cbb품목군.FormattingEnabled = true;
-            this.cbb품목군.Location = new System.Drawing.Point(79, 60);
-            this.cbb품목군.Name = "cbb품목군";
-            this.cbb품목군.Size = new System.Drawing.Size(179, 20);
-            this.cbb품목군.TabIndex = 84;
-            this.cbb품목군.ValueMember = "제품번호";
+            this.txb재고량.Location = new System.Drawing.Point(373, 77);
+            this.txb재고량.Name = "txb재고량";
+            this.txb재고량.Size = new System.Drawing.Size(150, 21);
+            this.txb재고량.TabIndex = 41;
             // 
-            // 제품BindingSource
+            // label5
             // 
-            this.제품BindingSource.DataSource = typeof(ClassLibrary.제품);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(304, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 12);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "재고량";
             // 
             // 품목등록
             // 
@@ -584,13 +563,13 @@
             this.Load += new System.EventHandler(this.품목등록_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.제품BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.사원등록BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.부서등록BindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv제품)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.제품BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,10 +597,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txb리드타임;
-        private System.Windows.Forms.TextBox txbLOT수량;
         private System.Windows.Forms.TextBox txb제품명;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txb안전재고량;
         private System.Windows.Forms.Label label11;
@@ -630,8 +607,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbbSearch검사여부;
         private System.Windows.Forms.ComboBox cbb검사여부;
-        private System.Windows.Forms.TextBox txb재고량;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txb표준원가;
         private System.Windows.Forms.TextBox txb외경;
         private System.Windows.Forms.Label label7;
@@ -649,5 +624,7 @@
         private System.Windows.Forms.BindingSource 부서등록BindingSource;
         private System.Windows.Forms.ComboBox cbb품목군;
         private System.Windows.Forms.BindingSource 제품BindingSource;
+        private System.Windows.Forms.TextBox txb재고량;
+        private System.Windows.Forms.Label label5;
     }
 }
